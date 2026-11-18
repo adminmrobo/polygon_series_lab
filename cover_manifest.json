@@ -1,0 +1,16 @@
+{
+  "series_ko": "데이터시각화 연구실 · 그릴 수 있는 등비급수",
+  "title_ko": "그릴 수 있는 등비급수",
+  "site_title": "그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이",
+  "site_url": "https://adminmrobo.github.io/polygon_series_lab/",
+  "ontology": {"pages": [{"path": "index.html", "kg": true, "export": true}], "files": []},
+  "i18n": {"langs": ["ko"], "pages": {"ko": 1}, "readme_langs": ["ko"]},
+  "languages": ["ko"],
+  "items": [
+    {"id": "cover_01", "role": "cover", "path": "img/cover_01.webp", "size": [1600, 900],
+     "characters": ["doc", "asst", "fly", "jupanbot", "moa"], "robot": "jupanbot-v2",
+     "prompt_en": "Website top cover illustration, wide 16:9 ... nested regular heptagons with a terracotta spiral winding inward on a white board ... No text (전체: COVER_PROMPTS_polygon_series_lab.md)",
+     "source_of": null, "status": "pending", "received": null}
+  ],
+  "updated": "2026-11-19"
+}

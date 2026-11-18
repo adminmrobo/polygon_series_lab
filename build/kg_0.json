@@ -1,0 +1,895 @@
+{
+ "version": "1.3",
+ "page": "index",
+ "nodes": [
+  {
+   "id": "lab:concept/regular-polygon",
+   "type": "Concept",
+   "label": {
+    "ko": "정다각형",
+    "en": "Regular polygon"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "변의 길이와 각의 크기가 모두 같은 다각형."
+   }
+  },
+  {
+   "id": "lab:concept/midpoint-polygon",
+   "type": "Concept",
+   "label": {
+    "ko": "중점 다각형",
+    "en": "Midpoint polygon"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "각 변의 중점을 이어 만든 안쪽 다각형. 정다각형이면 같은 모양이 된다."
+   }
+  },
+  {
+   "id": "lab:concept/similarity-area-ratio",
+   "type": "Concept",
+   "label": {
+    "ko": "닮음의 넓이비",
+    "en": "Area ratio of similar figures"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "닮은 도형의 넓이비는 길이비의 제곱."
+   }
+  },
+  {
+   "id": "lab:concept/geometric-sequence",
+   "type": "Concept",
+   "label": {
+    "ko": "등비수열",
+    "en": "Geometric sequence"
+   },
+   "page": "index",
+   "anchor": "#c2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "앞의 수에 늘 같은 공비를 곱해 만든 수의 줄."
+   }
+  },
+  {
+   "id": "lab:concept/common-ratio",
+   "type": "Concept",
+   "label": {
+    "ko": "공비 r = cos²(π/n)",
+    "en": "Common ratio"
+   },
+   "page": "index",
+   "anchor": "#c2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "한 단계마다 넓이에 곱해지는 비율."
+   }
+  },
+  {
+   "id": "lab:concept/log-scale",
+   "type": "Concept",
+   "label": {
+    "ko": "로그 눈금",
+    "en": "Logarithmic scale"
+   },
+   "page": "index",
+   "anchor": "#c2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "10배마다 같은 간격인 축. 같은 비율의 변화가 직선으로 보인다."
+   }
+  },
+  {
+   "id": "lab:concept/partial-sum",
+   "type": "Concept",
+   "label": {
+    "ko": "부분합",
+    "en": "Partial sum"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "처음부터 k번째까지 더한 값."
+   }
+  },
+  {
+   "id": "lab:concept/geometric-series",
+   "type": "Concept",
+   "label": {
+    "ko": "등비급수",
+    "en": "Geometric series"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "등비수열을 끝없이 더한 것. |r| < 1이면 1/(1 − r)로 수렴한다."
+   }
+  },
+  {
+   "id": "lab:concept/convergence",
+   "type": "Concept",
+   "label": {
+    "ko": "수렴과 점근선",
+    "en": "Convergence and asymptote"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "부분합이 끝값에 한없이 다가가는 것. 차트에서는 끝값 점선."
+   }
+  },
+  {
+   "id": "lab:concept/unit-of-measure",
+   "type": "Concept",
+   "label": {
+    "ko": "단위 (무엇을 1로 두었나)",
+    "en": "Unit of measure"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "같은 양도 기준을 무엇으로 두느냐에 따라 숫자가 달라진다."
+   }
+  },
+  {
+   "id": "lab:concept/dual-axis",
+   "type": "Concept",
+   "label": {
+    "ko": "이중 축",
+    "en": "Dual axis chart"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "한 차트에 서로 다른 단위의 축 두 개를 두는 방식. 오해를 부르기 쉽다."
+   }
+  },
+  {
+   "id": "lab:claim/spiral-one-over-n",
+   "type": "Claim",
+   "label": {
+    "ko": "나선의 넓이 = 도형의 1/n",
+    "en": "Spiral area equals 1/n of the polygon"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "첫 조각 A(1 − r)/n에 1/(1 − r)을 곱하면 A/n."
+   }
+  },
+  {
+   "id": "lab:claim/source-fix-midpoint",
+   "type": "Claim",
+   "label": {
+    "ko": "원자료 정정: 꼭짓점 → 변의 중점",
+    "en": "Correction: midpoints, not vertices"
+   },
+   "page": "index",
+   "anchor": "#fix",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:claim/source-fix-unit",
+   "type": "Claim",
+   "label": {
+    "ko": "원자료 정정: S는 첫 조각 단위",
+    "en": "Correction: S is in units of the first piece"
+   },
+   "page": "index",
+   "anchor": "#fix",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:analogy/photocopy",
+   "type": "Analogy",
+   "label": {
+    "ko": "축소 복사 (A4 → A5)",
+    "en": "Reduced photocopy"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:analogy/cake-halves",
+   "type": "Analogy",
+   "label": {
+    "ko": "케이크 반씩 먹기",
+    "en": "Eating half the cake each time"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:sim/ps-midpoint",
+   "type": "Simulation",
+   "label": {
+    "ko": "중점 잇기 실험",
+    "en": "Midpoint construction"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:sim/ps-bars",
+   "type": "Simulation",
+   "label": {
+    "ko": "단계별 넓이 막대 (로그 눈금)",
+    "en": "Area bars with log scale"
+   },
+   "page": "index",
+   "anchor": "#c2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:sim/ps-partial",
+   "type": "Simulation",
+   "label": {
+    "ko": "나선과 부분합",
+    "en": "Spiral and partial sums"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:sim/ps-units",
+   "type": "Simulation",
+   "label": {
+    "ko": "두 단위 차트",
+    "en": "Two-unit charts"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:sim/ps-duel",
+   "type": "Simulation",
+   "label": {
+    "ko": "대결: 몇 각형이 가장 많이 칠할까",
+    "en": "Duel: which polygon fills most"
+   },
+   "page": "index",
+   "anchor": "#duel",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:limitation/ideal-infinite",
+   "type": "Limitation",
+   "label": {
+    "ko": "이상적 도형·무한 단계 가정",
+    "en": "Ideal polygon and infinite steps"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:question/non-regular",
+   "type": "Question",
+   "label": {
+    "ko": "정다각형이 아니면 중점 다각형은 어떻게 될까?",
+    "en": "What happens for non-regular polygons?"
+   },
+   "page": "index",
+   "anchor": "#sum",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:work/matharium_polygon_series",
+   "type": "Work",
+   "label": {
+    "ko": "matharium: A regular polygon is a geometric series you can draw",
+    "en": "matharium infographic"
+   },
+   "page": "index",
+   "anchor": "#top",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c1-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c1 문제 1",
+    "en": "Quiz c1-1"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c1-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c1 문제 2",
+    "en": "Quiz c1-2"
+   },
+   "page": "index",
+   "anchor": "#c1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c2-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c2 문제 1",
+    "en": "Quiz c2-1"
+   },
+   "page": "index",
+   "anchor": "#c2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c2-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c2 문제 2",
+    "en": "Quiz c2-2"
+   },
+   "page": "index",
+   "anchor": "#c2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c3-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c3 문제 1",
+    "en": "Quiz c3-1"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c3-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c3 문제 2",
+    "en": "Quiz c3-2"
+   },
+   "page": "index",
+   "anchor": "#c3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c4-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c4 문제 1",
+    "en": "Quiz c4-1"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-c4-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "c4 문제 2",
+    "en": "Quiz c4-2"
+   },
+   "page": "index",
+   "anchor": "#c4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:quiz/ps-duel-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "duel 문제 1",
+    "en": "Quiz duel-1"
+   },
+   "page": "index",
+   "anchor": "#duel",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math"
+   ],
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/midpoint-polygon",
+   "p": "lab:partOf",
+   "o": "lab:concept/regular-polygon",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/similarity-area-ratio",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:concept/common-ratio",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/common-ratio",
+   "p": "lab:partOf",
+   "o": "lab:concept/geometric-sequence",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/geometric-sequence",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/partial-sum",
+   "p": "lab:partOf",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/convergence",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/log-scale",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/geometric-sequence",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/unit-of-measure",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/dual-axis",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/spiral-one-over-n",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/spiral-one-over-n",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/unit-of-measure",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:analogy/photocopy",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/similarity-area-ratio",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:analogy/cake-halves",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/midpoint-polygon",
+   "p": "lab:demonstratedBy",
+   "o": "lab:sim/ps-midpoint",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/log-scale",
+   "p": "lab:demonstratedBy",
+   "o": "lab:sim/ps-bars",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/partial-sum",
+   "p": "lab:demonstratedBy",
+   "o": "lab:sim/ps-partial",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/spiral-one-over-n",
+   "p": "lab:demonstratedBy",
+   "o": "lab:sim/ps-units",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/unit-of-measure",
+   "p": "lab:demonstratedBy",
+   "o": "lab:sim/ps-duel",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/spiral-one-over-n",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/ideal-infinite",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/ideal-infinite",
+   "p": "lab:raises",
+   "o": "lab:question/non-regular",
+   "anchor": "#sum",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/source-fix-midpoint",
+   "p": "lab:relatedTo",
+   "o": "lab:work/matharium_polygon_series",
+   "anchor": "#fix",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/source-fix-unit",
+   "p": "lab:relatedTo",
+   "o": "lab:work/matharium_polygon_series",
+   "anchor": "#fix",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/geometric-series",
+   "p": "lab:broader",
+   "o": "lab:area/math",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/regular-polygon",
+   "p": "lab:broader",
+   "o": "lab:area/math",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c1-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/common-ratio",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c1-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/common-ratio",
+   "anchor": "#c1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c2-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/log-scale",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c2-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/log-scale",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c3-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c3-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/geometric-series",
+   "anchor": "#c3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c4-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/unit-of-measure",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-c4-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/unit-of-measure",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/ps-duel-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/unit-of-measure",
+   "anchor": "#duel",
+   "confidence": "high"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+[
+ {
+  "id": "matharium_polygon_series",
+  "type": "graphic",
+  "title": "A regular polygon is a geometric series you can draw",
+  "author": [
+   {
+    "literal": "matharium"
+   }
+  ],
+  "accessed": {
+   "date-parts": [
+    [
+     2026,
+     11,
+     18
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/matharium_polygon_series",
+   "role": "background",
+   "supports": [
+    "lab:concept/common-ratio",
+    "lab:concept/geometric-series"
+   ],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": false,
+    "url": false
+   },
+   "checkedBy": "사용자 제공 이미지에서 옮김. 원 게시물 주소·게시일은 받지 못함. 수식은 페이지에서 검산",
+   "note": "r·S 예시 네 가지 검산 일치. '꼭짓점을 잇는다'와 넓이 단위 표기는 이 페이지에서 고침. 그림은 새로 그림"
+  }
+ }
+]
