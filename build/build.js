@@ -7,7 +7,7 @@ const B=__dirname,R=path.join(B,'..');
 const rd=f=>fs.readFileSync(path.join(B,f),'utf8');
 const css=rd('common.css'),sprites=rd('sprites96.js'),common=rd('common.js');
 const kgx=rd('kgx.js');  // ai-lab-explainer v1.14 판 (흰 배경 기본색)
-const BB=JSON.parse(rd('backbone.json'));
+const BB=JSON.parse(rd('backbone.json'));['backbone_math.json','backbone_data.json'].forEach(f=>{BB.nodes=BB.nodes.concat(JSON.parse(rd(f)).nodes);});
 // KGX.toJsonLd를 쓰려고 브라우저 없이 모듈을 띄운다
 const ctx={document:{readyState:'loading',addEventListener(){},getElementById(){return null;}},window:{},navigator:{},console};
 vm.createContext(ctx);vm.runInContext(kgx+';this.KGX=KGX;',ctx);

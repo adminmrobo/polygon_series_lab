@@ -17,7 +17,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -39,7 +40,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -61,7 +63,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -83,7 +86,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -105,7 +109,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -127,7 +132,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -149,7 +155,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -171,7 +178,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -193,7 +201,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -215,7 +224,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -237,7 +247,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -259,7 +270,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": [],
    "definition": {
@@ -281,7 +293,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -300,7 +313,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -319,7 +333,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -338,7 +353,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -357,7 +373,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -376,7 +393,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -395,7 +413,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -414,7 +433,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -433,7 +453,71 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:concept/ai-output-check",
+   "type": "Concept",
+   "label": {
+    "ko": "AI 결과 확인 질문 (단위·가정·상식)",
+    "en": "Checking AI output"
+   },
+   "page": "index",
+   "anchor": "#aic",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math",
+    "data"
+   ],
+   "match": [],
+   "definition": {
+    "ko": "AI가 낸 결과를 받으면 단위, 가정, 상식에 맞는지를 묻는다."
+   }
+  },
+  {
+   "id": "lab:sim/ps-aic",
+   "type": "Simulation",
+   "label": {
+    "ko": "AI 판단 코너: AI 보고 문장 점검",
+    "en": "AI judgment corner"
+   },
+   "page": "index",
+   "anchor": "#aic",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math",
+    "data"
+   ],
+   "match": []
+  },
+  {
+   "id": "lab:sim/ps-practice",
+   "type": "Simulation",
+   "label": {
+    "ko": "연습: 정팔각형으로 직접 계산",
+    "en": "Practice with an octagon"
+   },
+   "page": "index",
+   "anchor": "#practice",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "family": "geometric-series",
+   "domain": [
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -452,7 +536,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -471,7 +556,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -490,7 +576,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -509,7 +596,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -528,7 +616,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -547,7 +636,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -566,7 +656,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -585,7 +676,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -604,7 +696,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -623,7 +716,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -642,7 +736,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   },
@@ -661,7 +756,8 @@
    "coverage": "explained",
    "family": "geometric-series",
    "domain": [
-    "math"
+    "math",
+    "data"
    ],
    "match": []
   }
@@ -817,15 +913,57 @@
   {
    "s": "lab:concept/geometric-series",
    "p": "lab:broader",
-   "o": "lab:area/math",
+   "o": "lab:topic/series-convergence",
    "anchor": "#c3",
    "confidence": "high"
   },
   {
-   "s": "lab:concept/regular-polygon",
+   "s": "lab:concept/geometric-sequence",
    "p": "lab:broader",
-   "o": "lab:area/math",
-   "anchor": "#c1",
+   "o": "lab:topic/sequences-limits",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/log-scale",
+   "p": "lab:broader",
+   "o": "lab:topic/chart-selection",
+   "anchor": "#c2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/dual-axis",
+   "p": "lab:broader",
+   "o": "lab:topic/chart-selection",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/unit-of-measure",
+   "p": "lab:broader",
+   "o": "lab:area/data-visualization",
+   "anchor": "#c4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/ai-output-check",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/unit-of-measure",
+   "anchor": "#aic",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/ai-output-check",
+   "p": "lab:demonstratedBy",
+   "o": "lab:sim/ps-aic",
+   "anchor": "#aic",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/ps-practice",
+   "p": "lab:assesses",
+   "o": "lab:claim/spiral-one-over-n",
+   "anchor": "#practice",
    "confidence": "high"
   },
   {

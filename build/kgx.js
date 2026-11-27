@@ -14,12 +14,14 @@ var TYPE={Concept:['개념','#82b8ff'],Method:['방법','#5ee39c'],BioAnalogue:[
   Dataset:['데이터','#c9c4a4'],Simulation:['시뮬레이션','#8a88a8'],QuizItem:['퀴즈','#9a90c4'],Work:['문헌','#e0d7a8'],
   Area:['영역','#eceaf3'],Topic:['주제','#9d9bb8'],Analogy:['비유','#ff86b8'],Term:['용어','#82b8ff'],
   Theory:['이론·모형','#9ab0d0'],Assumption:['가정','#c9b8ff'],Identity:['항등식','#b8a27a'],Standard:['기준·법령','#d9a066'],
-  Account:['계정과목','#b8a27a'],Indicator:['공식 지표','#7fd1a8'],Distribution:['확률분포','#9ab0d0'],Framework:['분석 틀','#d98c6a']};
+  Account:['계정과목','#b8a27a'],Indicator:['공식 지표','#7fd1a8'],Distribution:['확률분포','#9ab0d0'],Framework:['분석 틀','#d98c6a'],
+  Definition:['정의','#a8c8f0'],Theorem:['정리','#f0a8c8'],Axiom:['공리','#e0c070'],Proof:['증명','#c0a0e0'],Structure:['수학적 대상','#90d0c0'],Estimator:['추정량','#b0d890']};
 var REL={prerequisiteOf:'먼저 알아야 함',hasLimitation:'한계',addressedBy:'해결됨',partOf:'부분',bioAnalogueOf:'생물 대응',
   contrastsWith:'대비',supports:'뒷받침',assertedIn:'출처',evaluatedBy:'지표로 평가',evaluatedOn:'데이터로 평가',
   demonstratedBy:'시뮬레이션',raises:'질문을 낳음',relatedTo:'관련',solves:'해결 과제',analogyOf:'비유',assesses:'퀴즈 확인',
   broader:'상위 주제',explainedIn:'설명 위치',inspiredBy:'착상',assumes:'가정',derivedFrom:'유도됨',governedBy:'기준',
-  supersededBy:'개정으로 대체',measuredBy:'지표로 잼',appliesIn:'적용 관할'};
+  supersededBy:'개정으로 대체',measuredBy:'지표로 잼',appliesIn:'적용 관할',
+  implies:'함의',specialCaseOf:'특수한 경우',equivalentTo:'같음',provedBy:'증명',instanceOf:'예',counterexampleTo:'반례'};
 function tl(t){return (TYPE[t]||[t])[0];} function tc(t){return (TYPE[t]||[0,'#9d9bb8'])[1];}
 function pn(p){return p.replace(/^lab:/,'');}
 function lab(n){return n.label?(n.label.ko||n.label.en):n.id;}
@@ -28,7 +30,7 @@ function lab(n){return n.label?(n.label.ko||n.label.en):n.id;}
 var NS='urn:lab:';
 var CTX={'@vocab':NS,lab:NS,skos:'http://www.w3.org/2004/02/skos/core#',schema:'https://schema.org/',
   dct:'http://purl.org/dc/terms/',prov:'http://www.w3.org/ns/prov#',rdfs:'http://www.w3.org/2000/01/rdf-schema#'};
-var SKOS_T={Concept:1,Method:1,Task:1,Term:1,Limitation:1,BioAnalogue:1,Metric:1,Area:1,Topic:1,Theory:1,Assumption:1,Identity:1,Account:1,Distribution:1,Framework:1};
+var SKOS_T={Concept:1,Method:1,Task:1,Term:1,Limitation:1,BioAnalogue:1,Metric:1,Area:1,Topic:1,Theory:1,Assumption:1,Identity:1,Account:1,Distribution:1,Framework:1,Definition:1,Theorem:1,Axiom:1,Structure:1,Estimator:1};
 var SCH_T={Work:'schema:ScholarlyArticle',Claim:'schema:Claim',Dataset:'schema:Dataset',QuizItem:'schema:Question',Question:'schema:Question',Simulation:'schema:SoftwareApplication',Standard:'schema:Legislation',Indicator:'schema:StatisticalVariable'};
 function lit(o){var a=[]; Object.keys(o||{}).forEach(function(k){ var v=o[k]; (Array.isArray(v)?v:[v]).forEach(function(x){a.push({'@value':x,'@language':k});});}); return a;}
 function toJsonLd(g,meta){
@@ -44,7 +46,9 @@ function toJsonLd(g,meta){
   g.edges.forEach(function(e){ var s=byS[e.s]; if(!s)return; var k=e.p; (s[k]=s[k]||[]).push({'@id':e.o});
     if(e.p==='lab:broader')(s['skos:broader']=s['skos:broader']||[]).push({'@id':e.o});
     if(e.p==='lab:assertedIn')(s['prov:wasDerivedFrom']=s['prov:wasDerivedFrom']||[]).push({'@id':e.o});
-    if(e.p==='lab:relatedTo')(s['skos:related']=s['skos:related']||[]).push({'@id':e.o}); });
+    if(e.p==='lab:relatedTo')(s['skos:related']=s['skos:related']||[]).push({'@id':e.o});
+    if(e.p==='lab:specialCaseOf')(s['skos:broader']=s['skos:broader']||[]).push({'@id':e.o});
+    if(e.p==='lab:equivalentTo')(s['skos:exactMatch']=s['skos:exactMatch']||[]).push({'@id':e.o}); });
   if(meta)graph.unshift({'@id':NS+'page/'+meta.number,'@type':['schema:LearningResource','schema:WebPage'],'schema:name':meta.title,
     'schema:inLanguage':meta.language,'schema:dateCreated':meta.date,'schema:version':meta.version,'dct:isPartOf':meta.series,
     'schema:about':(meta.about||[]).map(function(a){return {'@id':a};}),'schema:educationalLevel':meta.educationalLevel,
@@ -217,9 +221,11 @@ var CSS='.kgx-sec{background:var(--bg,#ffffff);color:var(--text,#16212b);padding
 .kgx .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px}\
 .kgx .stats div{background:var(--panel,#f6f8fa);border:1px solid var(--rule,#d5dbe2);border-radius:10px;padding:10px 12px}\
 .kgx .stats b{display:block;font-size:24px;font-variant-numeric:tabular-nums}.kgx .stats span{color:var(--muted,#5b6874);font-size:13px}\
-.kgx .say{display:flex;gap:12px;align-items:flex-start;margin:6px 0 14px}\
-.kgx .say .who{flex:none;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:13px;color:#13141f}\
-.kgx .say p{margin:0;background:var(--panel2,#eef2f6);border:1px solid var(--rule,#d5dbe2);border-radius:12px;padding:10px 14px;font-size:15px}\
+.kgx .say{display:flex;gap:12px;align-items:flex-start;margin:6px 0 14px;background:var(--panel,#f6f8fa);border:1px solid var(--rule,#d5dbe2);border-left:4px solid var(--who,var(--c-asst,#c42a6e));border-radius:14px;padding:10px 14px}\
+.kgx .say img{flex:none;width:64px;height:64px;border-radius:10px;background:#fff;object-fit:contain}\
+.kgx .say .name{display:block;color:var(--who,var(--c-asst,#c42a6e));font-size:14px}\
+.kgx .say p{margin:.15em 0 0;font-size:15px}\
+.kgx .say>div{flex:1;min-width:0;background:none;border:0;box-shadow:none;padding:0;margin:0;border-radius:0}\
 .kgx .refs .r{padding:12px 14px;border-bottom:1px solid var(--rule,#d5dbe2)}.kgx .refs .r:last-child{border-bottom:0}\
 .kgx .badge{display:inline-block;font-size:11.5px;border-radius:5px;padding:0 6px;margin-left:6px;font-weight:700}\
 .kgx .badge.ok{background:var(--gfp,#13733a);color:var(--bg,#ffffff)}.kgx .badge.no{background:transparent;border:1px solid var(--amber,#a35c00);color:var(--amber,#a35c00)}\
@@ -254,9 +260,9 @@ function mountIndex(root){
     '<div class="grid2"><div class="list" role="listbox" aria-label="검색 결과"></div>'+
     '<div><div class="gbox"><canvas aria-label="선택한 항목과 이웃 관계 그래프"></canvas></div><div class="legend"></div>'+
     '<p class="note gnote">항목을 고르면 그 항목과 바로 이어진 이웃만 보여 준다. 그래프의 점을 눌러도 된다.</p></div></div>'+
-    '<h3>사다리 경로 — 먼저 알아야 할 것과 한계의 사슬</h3><div class="path ladder"></div>'+
+    '<h3>개념정리 경로 — 먼저 알아야 할 것과 한계의 사슬</h3><div class="path ladder"></div>'+
     '<h3>열린 질문 · 확인 필요</h3><ul class="todo qs"></ul>';
-  // 칸 수 계산 오류 방지: 개념+방법 합
+  // 항목 수 계산 오류 방지: 개념+방법 합
   root.querySelector('.stats div:nth-child(3) b').textContent=(count.Concept||0)+(count.Method||0);
   var inp=root.querySelector('input'), chips=root.querySelector('.chips'), list=root.querySelector('.list'), cv=root.querySelector('canvas');
   types.forEach(function(t){var b=el('button','tchip',tl(t)+' '+count[t]); b.type='button'; b.setAttribute('aria-pressed',on[t]);
@@ -334,7 +340,7 @@ function mountIndex(root){
   cv.addEventListener('click',function(ev){var r=cv.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top,best=null,bd=400;
     G.pts.forEach(function(p){var d=(p.X-x)*(p.X-x)+(p.Y-y)*(p.Y-y); if(d<bd){bd=d;best=p;}}); if(best)pick(best.id,true);});
   var rt; window.addEventListener('resize',function(){clearTimeout(rt); rt=setTimeout(draw,150);});
-  // 사다리 경로
+  // 개념정리 경로
   var lad=root.querySelector('.ladder'), chainE=KG.edges.filter(function(e){return (e.p==='lab:prerequisiteOf'&&N[e.s].type==='Method'&&N[e.o]&&N[e.o].type==='Method');});
   var nexts={},has={}; chainE.forEach(function(e){nexts[e.s]=e.o;has[e.o]=1;});
   var start=Object.keys(nexts).filter(function(k){return !has[k];})[0], seen={};
@@ -343,7 +349,7 @@ function mountIndex(root){
     var lim=OUT[cur].filter(function(e){return e.p==='lab:hasLimitation';})[0];
     if(lim)html.push('<span class="a">→ 한계</span><span class="s lim" data-go="'+lim.o+'">'+esc(lab(N[lim.o]))+'</span>');
     if(nexts[cur])html.push('<span class="a">→ 해결</span>');}
-  lad.innerHTML=html.length?html.join(''):'<span class="note">이 페이지에는 사다리 사슬이 없다.</span>';
+  lad.innerHTML=html.length?html.join(''):'<span class="note">이 페이지에는 개념정리 사슬이 없다.</span>';
   lad.addEventListener('click',function(ev){var s=ev.target.closest('[data-go]'); if(s)pick(s.dataset.go,true);});
   var qs=root.querySelector('.qs'); KG.nodes.filter(function(n){return n.type==='Question';}).forEach(function(n){
     var li=el('li',null,'<b>'+esc(lab(n))+'</b>'+(n.definition?' — '+esc(n.definition.ko):'')+(n.confidence==='low'?' <span class="badge no">확인 필요</span>':'')+(n.anchor?' <a href="'+n.anchor+'" style="color:var(--gfp,#13733a)">본문</a>':''));
@@ -352,18 +358,27 @@ function mountIndex(root){
 }
 
 /* ── 꾸러미 ─────────────────────────────────────────── */
+/* 조수 말풍선 그림: 페이지의 캐릭터 그림(Cast 또는 SPRITE)을 쓴다. 글자 상자로 대신하지 않는다. */
+function asstSrc(){var s='';try{
+  if(window.Cast&&Cast.src)s=Cast.src('asst','e13')||Cast.src('asst','smile')||'';
+  if(!s&&window.SPRITE){var A=window.SPRITE_ALIAS||{};var S=window.SPRITE;s=S[A.asst_e13||'asst_e13']||S[A.asst_smile||'asst_smile']||'';}
+  if(!s&&window.LAB_PACK&&LAB_PACK.img){var I=LAB_PACK.img,L=LAB_PACK.alias||{};s=I.asst_e13||I[L.asst_smile||'asst_smile']||'';}
+  if(!s){var q=[].slice.call(document.querySelectorAll('img[alt]')).filter(function(i){return /조수|하루/.test(i.alt)&&!/표지|장면|설정 그림/.test(i.alt)&&i.getAttribute('src');})[0];if(q)s=q.getAttribute('src');}
+  if(!s)s='data:image/webp;base64,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'; /* 마지막 대비: 캐릭터 팩 asst_e13 96px */
+}catch(e){} return s;}
 function mountExport(root){
   var KG=J('kg-raw'),REF=J('refs-csl'),META=J('page-meta'); root.classList.add('kgx');
   var verifiedAll=function(r){var v=r.lab&&r.lab.verified; return v&&Object.keys(v).every(function(k){return v[k];});};
   var vb=REF.filter(verifiedAll).length;
   var claims=KG.nodes.filter(function(n){return n.type==='Claim';});
-  var todo=[]; REF.forEach(function(r){var v=r.lab&&r.lab.verified||{}; Object.keys(v).forEach(function(k){if(!v[k])todo.push(r.id+' — '+k+' 미확인 (빈칸으로 둠)');});});
-  todo.push('주장 '+claims.length+'개의 원문 위치(쪽·그림 번호) — provenance.csv의 loc 칸이 비어 있음');
+  var todo=[]; REF.forEach(function(r){var v=r.lab&&r.lab.verified||{}; Object.keys(v).forEach(function(k){if(!v[k])todo.push(r.id+' — '+k+' 미확인 (공란으로 둠)');});});
+  todo.push('주장 '+claims.length+'개의 원문 위치(쪽·그림 번호) — provenance.csv의 loc 항목이 비어 있음');
   todo.push('페이지 저자 이름·라이선스·공개 주소 — page_meta.json에서 비워 둠');
   var sup={}; KG.edges.forEach(function(e){ if(e.p==='lab:assertedIn'){var k=e.o.replace('lab:work/',''); (sup[k]=sup[k]||[]).push(e.s);} });
   KG.nodes.forEach(function(n){(n.source||[]).forEach(function(s){(sup[s.ref]=sup[s.ref]||[]); if(sup[s.ref].indexOf(n.id)<0)sup[s.ref].push(n.id);});});
   var N={}; KG.nodes.forEach(function(n){N[n.id]=n;});
-  root.innerHTML='<div class="say"><div class="who" style="background:var(--c-asst,#ff86b8)">조수</div><p>출처 없는 주장은 꾸러미에 넣지 않았어요. 사람이 확인할 항목 '+todo.length+'개는 아래에 있어요.</p></div>'+
+  var asrc=asstSrc();
+  root.innerHTML='<div class="say" data-who="asst"><img data-who="asst" data-mood="e13" alt="" aria-hidden="true"'+(asrc?' src="'+asrc+'"':'')+'><div><b class="name">조수(하루)</b><p>출처 없는 주장은 꾸러미에 넣지 않았어요. 사람이 확인할 항목 '+todo.length+'개는 아래에 있어요.</p></div></div>'+
     '<div class="stats"><div><b>'+KG.nodes.length+'</b><span>노드</span></div><div><b>'+KG.edges.length+'</b><span>관계</span></div><div><b>'+REF.length+'</b><span>문헌</span></div>'+
     '<div><b>'+Math.round(100*vb/Math.max(1,REF.length))+'%</b><span>서지 전부 확인된 문헌</span></div>'+
     '<div><b>'+Math.round(100*claims.filter(function(n){return (n.source||[]).length;}).length/Math.max(1,claims.length))+'%</b><span>출처 있는 주장</span></div></div>'+
@@ -395,7 +410,9 @@ function mountExport(root){
   root.querySelector('.zip').onclick=function(){download(makeZip(buildPackage(scope)),'kg_'+META.number+'_'+scope+'.zip');};
   info();
 }
-function init(){addCss(); var a=$id('kg-mount'),b=$id('export-mount'); if(a)mountIndex(a); if(b)mountExport(b);}
+function init(){addCss(); var a=$id('kg-mount'),b=$id('export-mount'); if(a)mountIndex(a); if(b)mountExport(b);
+  if(window.Cast&&Cast.fill)Cast.fill();
+  setTimeout(function(){var im=b&&b.querySelector('.say img[data-who]'); if(im&&!im.getAttribute('src'))im.remove();},0);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
 return {download:download,buildPackage:buildPackage,makeZip:makeZip,toJsonLd:toJsonLd,toTurtle:toTurtle,toBib:toBib,toRis:toRis};
 })();

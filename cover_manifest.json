@@ -3,14 +3,117 @@
   "title_ko": "그릴 수 있는 등비급수",
   "site_title": "그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이",
   "site_url": "https://adminmrobo.github.io/polygon_series_lab/",
-  "ontology": {"pages": [{"path": "index.html", "kg": true, "export": true}], "files": []},
-  "i18n": {"langs": ["ko"], "pages": {"ko": 1}, "readme_langs": ["ko"]},
-  "languages": ["ko"],
-  "items": [
-    {"id": "cover_01", "role": "cover", "path": "img/cover_01.webp", "size": [1600, 900],
-     "characters": ["doc", "asst", "fly", "jupanbot", "moa"], "robot": "jupanbot-v2",
-     "prompt_en": "Website top cover illustration, wide 16:9 ... nested regular heptagons with a terracotta spiral winding inward on a white board ... No text (전체: COVER_PROMPTS_polygon_series_lab.md)",
-     "source_of": null, "status": "pending", "received": null}
+  "ontology": {
+    "pages": [
+      {
+        "path": "index.html",
+        "kg": true,
+        "export": true
+      }
+    ],
+    "files": []
+  },
+  "i18n": {
+    "langs": [
+      "ko"
+    ],
+    "pages": {
+      "ko": 1
+    },
+    "readme_langs": [
+      "ko"
+    ]
+  },
+  "languages": [
+    "ko"
   ],
-  "updated": "2026-11-19"
+  "items": [
+    {
+      "id": "cover_01",
+      "role": "cover",
+      "path": "img/cover_01.webp",
+      "size": [
+        1600,
+        900
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "fly",
+        "jupanbot",
+        "moa",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "Website illustration, wide 16:9 ... high-resolution 16-bit pixel art ... girl researcher and calm maid intern asking and answering in front of a nested heptagon terracotta spiral ... No text (전체: COVER_PROMPTS_polygon_series_lab.md 1번)",
+      "source_of": null,
+      "status": "pending",
+      "received": null
+    },
+    {
+      "id": "sc_01_aic",
+      "role": "scene",
+      "path": "img/sc_01_aic.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "jupanbot",
+        "x2"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "(전체: COVER_PROMPTS_polygon_series_lab.md 2번)",
+      "source_of": null,
+      "status": "pending",
+      "received": null
+    },
+    {
+      "id": "sc_01_outro",
+      "role": "scene",
+      "path": "img/sc_01_outro.webp",
+      "size": [
+        1200,
+        800
+      ],
+      "characters": [
+        "doc",
+        "asst",
+        "sia",
+        "fly",
+        "jupanbot",
+        "moa",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "robot": "jupanbot-v2",
+      "prompt_en": "(전체: COVER_PROMPTS_polygon_series_lab.md 3번)",
+      "source_of": null,
+      "status": "pending",
+      "received": null
+    },
+    {
+      "id": "og_cover",
+      "role": "og",
+      "path": "img/og_cover.webp",
+      "size": [
+        1200,
+        630
+      ],
+      "characters": [],
+      "prompt_en": null,
+      "source_of": "cover_01",
+      "status": "temporary",
+      "received": "2026-11-27",
+      "note": "그림판 표지를 찍은 임시본. cover_01을 받으면 잘라 교체"
+    }
+  ],
+  "updated": "2026-11-27"
 }

@@ -5,7 +5,7 @@ PAGE = "index"
 def node(i, t, ko, en, anchor, df=None, level=1):
     n = {"id": i, "type": t, "label": {"ko": ko, "en": en}, "page": PAGE, "anchor": anchor, "level": level,
          "status": "known", "confidence": "high", "coverage": "explained", "family": "geometric-series",
-         "domain": ["math"], "match": []}
+         "domain": ["math", "data"], "match": []}
     if df: n["definition"] = {"ko": df}
     return n
 N = [
@@ -30,6 +30,9 @@ N = [
  node("lab:sim/ps-partial","Simulation","나선과 부분합","Spiral and partial sums","#c3"),
  node("lab:sim/ps-units","Simulation","두 단위 차트","Two-unit charts","#c4"),
  node("lab:sim/ps-duel","Simulation","대결: 몇 각형이 가장 많이 칠할까","Duel: which polygon fills most","#duel"),
+ node("lab:concept/ai-output-check","Concept","AI 결과 확인 질문 (단위·가정·상식)","Checking AI output","#aic","AI가 낸 결과를 받으면 단위, 가정, 상식에 맞는지를 묻는다."),
+ node("lab:sim/ps-aic","Simulation","AI 판단 코너: AI 보고 문장 점검","AI judgment corner","#aic"),
+ node("lab:sim/ps-practice","Simulation","연습: 정팔각형으로 직접 계산","Practice with an octagon","#practice"),
  node("lab:limitation/ideal-infinite","Limitation","이상적 도형·무한 단계 가정","Ideal polygon and infinite steps","#c4"),
  node("lab:question/non-regular","Question","정다각형이 아니면 중점 다각형은 어떻게 될까?","What happens for non-regular polygons?","#sum"),
  node("lab:work/matharium_polygon_series","Work","matharium: A regular polygon is a geometric series you can draw","matharium infographic","#top"),
@@ -61,8 +64,14 @@ E = [
  e("lab:limitation/ideal-infinite","lab:raises","lab:question/non-regular","#sum"),
  e("lab:claim/source-fix-midpoint","lab:relatedTo","lab:work/matharium_polygon_series","#fix"),
  e("lab:claim/source-fix-unit","lab:relatedTo","lab:work/matharium_polygon_series","#fix"),
- e("lab:concept/geometric-series","lab:broader","lab:area/math","#c3"),
- e("lab:concept/regular-polygon","lab:broader","lab:area/math","#c1"),
+ e("lab:concept/geometric-series","lab:broader","lab:topic/series-convergence","#c3"),
+ e("lab:concept/geometric-sequence","lab:broader","lab:topic/sequences-limits","#c2"),
+ e("lab:concept/log-scale","lab:broader","lab:topic/chart-selection","#c2"),
+ e("lab:concept/dual-axis","lab:broader","lab:topic/chart-selection","#c4"),
+ e("lab:concept/unit-of-measure","lab:broader","lab:area/data-visualization","#c4"),
+ e("lab:concept/ai-output-check","lab:relatedTo","lab:concept/unit-of-measure","#aic"),
+ e("lab:concept/ai-output-check","lab:demonstratedBy","lab:sim/ps-aic","#aic"),
+ e("lab:sim/ps-practice","lab:assesses","lab:claim/spiral-one-over-n","#practice"),
 ]
 quiz_target = {"c1":"lab:concept/common-ratio","c2":"lab:concept/log-scale","c3":"lab:concept/geometric-series","c4":"lab:concept/unit-of-measure","duel":"lab:concept/unit-of-measure"}
 for n in N:
@@ -80,11 +89,11 @@ json.dump(refs, open(os.path.join(D,"refs_0.json"),"w"), ensure_ascii=False, ind
 meta = {"title":"그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이","series":"데이터시각화 연구실","number":"1",
  "creator":[{"name":"안상선","role":"author","affiliation":"(주)M-Robo"}],
  "contributor":[{"name":"AI 보조 제작","role":"assistant"}],
- "date":"2026-11-19","version":"1.0","language":["ko"],"license":"",
+ "date":"2026-11-27","version":"2.0","language":["ko"],"license":"",
  "url":"https://adminmrobo.github.io/polygon_series_lab/",
  "about":["lab:concept/geometric-series","lab:concept/log-scale","lab:concept/unit-of-measure"],
  "basedOn":["matharium_polygon_series"],"educationalLevel":"입문","learningResourceType":"interactive explainer",
  "registry":"KG_00_registry 0.2",
- "suggestedCitation":"안상선 (2026). 그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이. 데이터시각화 연구실 1, v1.0."}
+ "suggestedCitation":"안상선 (2026). 그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이. 데이터시각화 연구실 1, v2.0."}
 json.dump(meta, open(os.path.join(D,"meta_0.json"),"w"), ensure_ascii=False, indent=1)
 print(len(N),"nodes",len(E),"edges")

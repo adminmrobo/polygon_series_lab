@@ -8,7 +8,8 @@
 <meta property="og:title" content="그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이">
 <meta property="og:description" content="중점을 이어 만든 정다각형 나선으로 등비수열·등비급수·로그 눈금·단위 읽기를 봅니다.">
 <meta property="og:type" content="article">
-<meta property="og:image" content="img/cover_01.webp">
+<meta property="og:image" content="https://adminmrobo.github.io/polygon_series_lab/img/og_cover.webp">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <!--@@CSS@@-->
@@ -58,20 +59,42 @@ section.sec{padding-top:88px}
 @media(max-width:620px){section.sec{padding-top:64px}}
 .explain li{margin:10px 0}
 .duelbars .resbar span{min-width:150px}
+.where{font-size:13.5px;color:var(--muted);margin:6px 0 0}
+.where b{color:var(--terrain)}
+.recap{border:1px dashed var(--info);background:var(--info-soft);border-radius:12px;padding:14px 18px;margin:16px 0;line-height:1.8}
+.recap>b{color:var(--info)}
+.interp{border-left:4px solid var(--c-doc);background:#faf7ff;border-radius:8px;padding:10px 14px;margin:12px 0 0;line-height:1.8}
+.interp b{color:var(--c-doc)}
+.aic{border:2px solid var(--amber);border-radius:14px;padding:18px 20px;margin:22px 0;background:#fffdf6}
+.aic>h3{margin:0 0 8px;color:var(--amber)}
+.aic .aiout{background:#f4f6f8;border-radius:10px;padding:12px 14px;font-size:15px;line-height:1.8;border:1px solid var(--rule)}
+.aic .aiout small{display:block;color:var(--muted);margin-bottom:4px}
+.aic ol{padding-left:20px}
+.aic li{margin:10px 0}
+.aic .chk{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.aic .fb{display:block;margin-top:6px;font-size:14.5px;line-height:1.7}
+.prac{border:1px solid var(--rule);border-radius:14px;padding:18px 20px;background:#fff;margin:14px 0}
+.prac h4{margin:0 0 8px}
+.prac input{font:inherit;width:120px;padding:6px 8px;border:1px solid var(--rule);border-radius:8px}
+.prac .fb{margin-top:8px;line-height:1.8}
+.prac .ok{color:var(--gfp);font-weight:700}
+.prac .no{color:var(--eye);font-weight:700}
+.prac details{margin-top:8px}
 </style>
+<!-- px-fix v1 --><style id="px-fix">img{image-rendering:auto!important}</style><script id="px-fix-js">(function(){var R=window.ResizeObserver;function f(i){var n=i.naturalWidth,w=i.getBoundingClientRect().width;if(!n||!w)return;var s=w*(window.devicePixelRatio||1)/n;i.style.setProperty("image-rendering",s>=1.95?"pixelated":"auto","important")}var ro=R?new R(function(es){es.forEach(function(e){f(e.target)})}):null;function a(i){if(i.__px)return;i.__px=1;i.addEventListener("load",function(){f(i)});if(ro)ro.observe(i);f(i)}function all(r){(r||document).querySelectorAll&&(r||document).querySelectorAll("img").forEach(a)}function go(){all();if(window.MutationObserver)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.tagName==="IMG")a(n);else all(n)})})}).observe(document.documentElement,{childList:true,subtree:true});window.addEventListener("resize",function(){document.querySelectorAll("img").forEach(f)})}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go()})();</script><!-- /px-fix -->
 </head>
 <body>
 <nav class="top" aria-label="섹션 바로가기"><div class="row">
   <a class="logo" href="#top">그릴 수 있는 <i>등비급수</i></a>
   <div class="links">
-    <a href="#why">왜</a><a href="#big">큰 그림</a><a href="#c1">① 중점</a><a href="#c2">② 등비수열</a><a href="#c3">③ 등비급수</a><a href="#c4">④ 단위</a><a href="#duel">대결</a><a href="#sum">정리</a><a href="#kg">색인</a><a href="#export">꾸러미</a>
+    <a href="#why">왜</a><a href="#big">큰 그림</a><a href="#c1">① 중점</a><a href="#c2">② 등비수열</a><a href="#c3">③ 등비급수</a><a href="#c4">④ 단위</a><a href="#aic">AI 판단</a><a href="#duel">대결</a><a href="#practice">연습</a><a href="#sum">정리</a><a href="#kg">색인</a><a href="#export">꾸러미</a>
   </div>
 </div></nav>
 
 <!-- lab-cover : 표지 그림(cover_01)을 받기 전까지 그림판 표지 -->
 <div class="cover" id="cover" data-img="cover_01"><div class="frame">
   <canvas id="coverCv" aria-hidden="true"></canvas>
-  <div class="cast4"><img class="s" data-mood="fly_magnify" alt="" aria-hidden="true"><img data-mood="doc_front" alt="" aria-hidden="true"><img data-mood="asst_smile" alt="" aria-hidden="true"><img class="s" data-mood="robo_coin" alt="" aria-hidden="true"></div>
+  <div class="cast4"><img class="s" data-mood="fly_magnify" alt="" aria-hidden="true"><img data-mood="doc_front" alt="" aria-hidden="true"><img data-mood="asst_smile" alt="" aria-hidden="true"><img class="s" data-mood="sia_smile" alt="" aria-hidden="true"><img class="s" data-mood="robo_coin" alt="" aria-hidden="true"></div>
   <span class="cap">정칠각형 안으로 감겨 드는 나선</span>
   <span class="badge">표지 그림 준비 중 · 설명용 그림</span>
   <span class="cover-chip">데이터시각화 연구실 · 그릴 수 있는 등비급수</span>
@@ -83,7 +106,8 @@ section.sec{padding-top:88px}
   <h1>그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이</h1>
   <p class="question">도형 안으로 끝없이 감겨 드는 나선을 다 칠하면, 넓이는 얼마일까?</p>
   <p class="lead">정다각형의 각 변 가운데 점(중점)을 이으면 안에 똑같이 생긴 작은 정다각형이 생깁니다. 이 일을 끝없이 되풀이하면서 모서리 한 조각씩 칠하면 나선이 됩니다. 이 페이지는 그 나선 하나로 <b>등비수열</b>, <b>등비급수</b>, <b>로그 눈금</b>, 그리고 데이터시각화에서 가장 자주 틀리는 <b>단위 읽기</b>까지 차례로 봅니다.</p>
-  <p class="byline">글 · 안상선 ((주)M-Robo 대표) · <a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">저자 소개</a> · 2026-11-19 · v1.0</p>
+  <p class="lead">이번 편은 조수 <b>하루</b>와 인턴 <b>시아</b>가 서로 묻고 답하며 나아갑니다. 막히는 곳에서는 박사, 초파리 연구원, 주판봇, 인턴 모아, 그리고 방청석의 X1·X2·X3가 한마디씩 거듭니다.</p>
+  <p class="byline">글 · 안상선 ((주)M-Robo 대표) · <a href="https://adminmrobo.github.io/who_am_i/who_am_i.html">저자 소개</a> · 2026-11-27 · v2.0</p>
 
   <div class="first3" id="first3"><b>처음 오신 분께 — 이 페이지를 3줄로</b>
     <dl>
@@ -91,7 +115,7 @@ section.sec{padding-top:88px}
       <dt>왜 중요한가</dt><dd>조각 넓이가 매번 같은 비율로 줄어서, 끝없이 더해도 합이 정해진 값에 멈춥니다. 이것이 등비급수입니다.</dd>
       <dt>수업·업무에서는</dt><dd>같은 숫자도 "몇 배"로 읽는지 "실제 크기"로 읽는지에 따라 정반대 결론이 납니다. 차트의 축과 단위부터 읽는 습관을 기릅니다.</dd>
     </dl>
-    <p class="nocode">코드와 수식을 몰라도 됩니다. 슬라이더를 움직이고, 수식은 조수 하루가 대신 물어봅니다.</p>
+    <p class="nocode">코드와 수식을 몰라도 됩니다. 슬라이더를 움직이고, 수식은 하루와 시아가 서로 묻고 답합니다. 중간에 멈춰도 괜찮아요.</p>
     <details><summary>이 페이지의 기호 풀이 (펼치기)</summary>
       <p><b>n</b> 정다각형의 꼭짓점 수(정육각형이면 6) · <b>π</b>(파이) 각도로 180° · <b>cos</b>(코사인) 직각삼각형의 밑변 ÷ 빗변 · <b>r</b> 공비, 한 단계마다 곱해지는 비율 · <b>S</b> 첫 조각을 1로 둔 나선 전체의 크기 · <b>k</b> 몇 번째 단계인지</p>
     </details>
@@ -111,8 +135,8 @@ section.sec{padding-top:88px}
 <section class="sec" id="cast-sec" aria-labelledby="h-cast"><div class="wrap">
   <h2 id="h-cast">등장인물과 이 페이지 사용법</h2>
   <div class="cast" id="castgrid"></div>
-  <div class="secret"><button class="bt" id="secretbtn" type="button" aria-expanded="false">방청석 보기 (미공개 식구)</button><div class="row" id="secretrow" hidden></div></div>
-  <div class="start"><b>읽는 법</b> 밑줄 친 낱말을 누르면 뜻이 나옵니다. ① → ② → ③ → ④ 순서로 보고 대결로 확인하세요. 칸마다 왼쪽은 "왜 필요한가", 오른쪽은 조수 하루가 대신 묻는 수식 풀이입니다.</div>
+  <div class="secret"><button class="bt" id="secretbtn" type="button" aria-expanded="false">방청석 소개 보기 (X1·X2·X3)</button><div class="row" id="secretrow" hidden></div></div>
+  <div class="start"><b>읽는 법</b> 밑줄 친 낱말을 누르면 뜻이 나옵니다. ① → ② → ③ → ④ 순서로 보고, AI 판단 코너와 대결로 확인한 뒤, 연습 문제로 마무리하세요. 단계마다 왼쪽은 "왜 필요한가", 오른쪽은 하루와 시아의 수식 문답입니다.</div>
 </div></section>
 
 <section class="sec" id="why" aria-labelledby="h-why"><div class="wrap">
@@ -135,8 +159,8 @@ section.sec{padding-top:88px}
   </div>
   <div class="fix" id="fix"><b>원자료와 다르게 쓴 곳 (검산 뒤 고침)</b>
     <ol>
-      <li>원자료의 "알맞은 꼭짓점을 잇는다(Join the right vertices)"를 이 페이지에서는 <b>"각 변의 중점을 잇는다"</b>로 바꿉니다. 꼭짓점끼리 이으면 같은 모양이 나오지 않습니다. 예를 들어 정육각형의 꼭짓점을 하나 걸러 이으면 삼각형이 됩니다.</li>
-      <li>원자료의 "색칠한 넓이 = 1/(1 − cos²(π/n))"를 이 페이지에서는 <b>"첫 조각을 1로 둔 크기 S"</b>로 바꿉니다. 실제 넓이로 바꾸면 <b>원래 도형 넓이의 1/n</b>입니다(④ 칸에서 확인).</li>
+      <li>원자료의 "알맞은 꼭짓점을 잇는다(Join the right vertices)"를 이 페이지에서는 <b>"각 변의 중점을 잇는다"</b>로 바꿉니다. 꼭짓점끼리 이으면 대각선이 그어져, n에 따라 다른 도형이 나오거나 넓이비가 cos²(π/n)이 되지 않습니다. 예를 들어 정육각형의 꼭짓점을 하나 걸러 이으면 삼각형이 되고, 정오각형의 대각선 안쪽에는 정오각형이 생기지만 넓이가 약 0.146배로 훨씬 작습니다.</li>
+      <li>원자료의 "색칠한 넓이 = 1/(1 − cos²(π/n))"를 이 페이지에서는 <b>"첫 조각을 1로 둔 크기 S"</b>로 바꿉니다. 실제 넓이로 바꾸면 <b>원래 도형 넓이의 1/n</b>입니다(④ 단계에서 확인).</li>
     </ol>
   </div>
 </div></section>
@@ -145,21 +169,25 @@ section.sec{padding-top:88px}
 <section class="sec" id="c1" aria-labelledby="h-c1"><div class="wrap">
   <h2 id="h-c1"><span class="hex">1</span>중점을 이으면 작은 닮은꼴이 생긴다</h2>
   <div class="tags"><span class="tag nn">방법: 변의 중점 잇기</span><span class="tag fly">일상: 축소 복사</span></div>
+  <p class="where">지금 위치: <b>① 중점</b> → ② 등비수열 → ③ 등비급수 → ④ 단위</p>
+  <div data-dlg="c1a"></div>
+  <div class="recap"><b>30초 복습 — 닮음과 넓이</b> 모양이 같고 크기만 다른 두 도형을 "닮았다"고 합니다. 길이가 2배면 넓이는 2 × 2 = 4배, 길이가 0.5배면 넓이는 0.5 × 0.5 = 0.25배입니다. 넓이는 늘 길이 비율의 제곱으로 바뀝니다.</div>
   <div class="why2">
     <div class="whyb"><h4>왜 이 방법을 쓰나</h4>
       <ol><li><b>문제 상황</b> 도형 안에 같은 모양을 계속 넣고 싶습니다. 그래야 "몇 배씩 줄어드는지"를 한 숫자로 말할 수 있습니다.</li>
-        <li><b>그냥 하면 막히는 곳</b> 아무 점이나 이으면 모양이 찌그러지고, 꼭짓점끼리 이으면 다른 도형이 됩니다.</li>
+        <li><b>그냥 하면 막히는 곳</b> 아무 점이나 이으면 모양이 찌그러지고, 꼭짓점끼리 이으면 대각선이 생겨 다른 도형이 되거나 비율이 달라집니다.</li>
         <li><b>해법</b> 각 변의 중점을 이으면 언제나 같은 정다각형이 조금 돌아간 채로 생깁니다.</li></ol>
       <p class="easy"><b>쉽게 말하면</b> 축소 복사기에 같은 그림을 계속 넣는 것과 같습니다. 모양은 그대로, 크기만 일정하게 줄어듭니다.</p></div>
-    <div class="amath"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4>
-      <div class="ask"><img data-mood="asst_shock" alt="" aria-hidden="true"><p>"중점을 이었을 뿐인데 넓이가 왜 하필 cos²(π/n)배예요?"</p></div>
+    <div class="amath"><h4>수식이 어려운 분을 대신해 — 시아가 묻고 하루가 답합니다</h4>
+      <div class="ask"><img data-mood="sia_think" alt="" aria-hidden="true" style="border-color:var(--c-sia)"><p><b class="qa-who" style="color:var(--c-sia)">시아</b> "확인하고 싶습니다. 중점을 이었을 뿐인데 넓이가 왜 하필 cos²(π/n)배인가요?"</p></div>
+      <p style="margin:0 0 6px"><b style="color:var(--c-asst)">하루의 답</b> 기호부터 하나씩 읽어 볼게요. cos는 "코사인", π는 "파이"라고 읽고 여기서는 180°예요.</p>
       <span class="sch">학교 수학으로 보면: 삼각비(cos) · 닮음비와 넓이비</span>
       <table><tr><td>R</td><td>도형 한가운데에서 꼭짓점까지 거리</td></tr>
         <tr><td>π/n</td><td>180° ÷ n. 꼭짓점과 이웃 중점 사이의 중심각</td></tr>
         <tr><td>R·cos(π/n)</td><td>한가운데에서 변의 중점까지 거리 = 새 도형의 꼭짓점 거리</td></tr>
         <tr><td>cos²(π/n)</td><td>길이가 cos배면 넓이는 그 제곱배 (닮음의 넓이비)</td></tr></table>
       <p class="try"><b>숫자로 한 번 해 보기</b> 정사각형(n = 4), R = 1이면 중점까지 거리는 cos 45° ≈ 0.707. 넓이비는 0.707² = <b>0.5</b>. 안쪽 정사각형은 넓이가 꼭 절반입니다.</p>
-      <div class="ask"><img data-mood="asst_spark" alt="" aria-hidden="true"><p>새 꼭짓점이 옛 변의 중점이니까, 거리가 cos배로 줄고 넓이는 그 제곱으로 줄어드는 거군요!</p></div></div>
+      <div class="ask"><img data-mood="sia_smile" alt="" aria-hidden="true" style="border-color:var(--c-sia)"><p><b class="qa-who" style="color:var(--c-sia)">시아</b> 정리했습니다. 새 꼭짓점이 옛 변의 중점이라 거리가 cos배, 넓이는 그 제곱배로 줄어드는 거네요.</p></div></div>
   </div>
   <div class="pair">
     <div><div class="tl">일상으로 치면</div>A4 용지를 A5로 축소 복사하면 가로·세로는 약 0.71배, 넓이는 정확히 절반이 됩니다. 정사각형의 중점을 이을 때와 같은 비율입니다.</div>
@@ -177,10 +205,11 @@ section.sec{padding-top:88px}
     <div class="insight" id="i1" aria-live="polite"></div>
   </div>
   <div class="explain"><h4>풀이</h4><ol>
-    <li>각 변의 가운데 점(중점)을 차례로 이으면 같은 모양의 작은 정다각형이 생깁니다. 반 칸만큼 돌아가 있을 뿐입니다.</li>
+    <li>각 변의 가운데 점(중점)을 차례로 이으면 같은 모양의 작은 정다각형이 생깁니다. 중심각의 절반(180° ÷ n)만큼 돌아가 있을 뿐입니다.</li>
     <li>새 도형의 꼭짓점까지 거리는 cos(π/n)배이고, 넓이는 그 제곱인 r = cos²(π/n)배입니다.</li>
     <li>n이 클수록 r이 1에 가까워집니다. 원에 가까운 도형은 중점을 이어도 거의 줄지 않습니다.</li></ol>
-    <p class="lim"><b>이 칸의 한계</b> 한 번 줄어드는 비율은 알았지만, 열 번, 백 번 되풀이하면 넓이가 어떻게 되는지는 아직 모릅니다. → ② 칸</p></div>
+    <p class="interp"><b>박사의 해석</b> 정육각형이면 r = 0.75입니다. "중점을 한 번 이을 때마다 넓이가 4분의 3으로 줄어든다"는 뜻이에요. 차트로 말하면, 같은 그림을 매번 75% 크기로 겹쳐 그리는 것과 같습니다.</p>
+    <p class="lim"><b>이 단계의 한계</b> 한 번 줄어드는 비율은 알았지만, 열 번, 백 번 되풀이하면 넓이가 어떻게 되는지는 아직 모릅니다. → ② 단계</p></div>
   <div class="quiz" data-quiz="c1"></div>
 </div></section>
 
@@ -188,21 +217,24 @@ section.sec{padding-top:88px}
 <section class="sec" id="c2" aria-labelledby="h-c2"><div class="wrap">
   <h2 id="h-c2"><span class="hex">2</span>넓이가 r배씩 — 등비수열과 로그 눈금</h2>
   <div class="tags"><span class="tag nn">방법: 같은 비율 곱하기</span><span class="tag fly">설정: 로그 눈금</span></div>
+  <p class="where">지금 위치: ① 중점 → <b>② 등비수열</b> → ③ 등비급수 → ④ 단위 · 앞에서 얻은 비율 r을 되풀이합니다</p>
+  <div data-dlg="c2a"></div>
   <div class="why2">
     <div class="whyb"><h4>왜 이 방법을 쓰나</h4>
       <ol><li><b>문제 상황</b> 단계마다 넓이를 하나하나 재면 끝이 없습니다.</li>
-        <li><b>앞 칸의 한계</b> ① 칸은 한 번 줄어드는 비율만 알려 줬습니다.</li>
+        <li><b>앞 단계의 한계</b> ① 단계는 한 번 줄어드는 비율만 알려 줬습니다.</li>
         <li><b>해법</b> 매번 같은 비율 r을 곱하니, k번째 넓이는 r을 k번 곱한 r<sup>k</sup>입니다. 이런 수의 줄을 <b>등비수열</b>이라고 합니다.</li></ol>
       <p class="easy"><b>쉽게 말하면</b> 매일 25%씩 팔려 나가는 재고와 같습니다. 남는 양은 매일 0.75배가 됩니다.</p></div>
-    <div class="amath"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4>
-      <div class="ask"><img data-mood="asst_shock" alt="" aria-hidden="true"><p>"계속 같은 비율로 줄면, 열 번째엔 얼마나 남아요?"</p></div>
+    <div class="amath" style="border-left-color:var(--c-sia)!important"><h4 style="color:var(--c-sia)">수식이 어려운 분을 대신해 — 하루가 묻고 시아가 답합니다</h4>
+      <div class="ask"><img data-mood="asst_shock" alt="" aria-hidden="true" style="border-color:var(--c-asst)"><p><b class="qa-who" style="color:var(--c-asst)">하루</b> "시아, 계속 같은 비율로 줄면 열 번째엔 얼마나 남아?"</p></div>
+      <p style="margin:0 0 6px"><b style="color:var(--c-sia)">시아의 답</b> 순서대로 말씀드릴게요. r<sup>k</sup>는 "r의 k제곱", r을 k번 곱한다는 뜻입니다.</p>
       <span class="sch">학교 수학으로 보면: 등비수열 a<sub>k</sub> = a·r<sup>k</sup> · 지수함수</span>
       <table><tr><td>a</td><td>첫 도형의 넓이 (여기서는 1)</td></tr>
         <tr><td>r</td><td>공비. 한 단계마다 곱하는 비율 (= cos²(π/n))</td></tr>
         <tr><td>k</td><td>몇 번째 단계인지 (0, 1, 2, …)</td></tr>
         <tr><td>a·r<sup>k</sup></td><td>k번째 도형의 넓이</td></tr></table>
       <p class="try"><b>숫자로 한 번 해 보기</b> 정육각형은 r = 0.75. 넓이는 1 → 0.75 → 0.5625 → 0.4219 …, 10단계에서는 0.75<sup>10</sup> ≈ <b>0.0563</b>. 처음의 6%도 안 남습니다.</p>
-      <div class="ask"><img data-mood="asst_spark" alt="" aria-hidden="true"><p>보통 눈금에선 금방 바닥에 붙는데, 로그 눈금으로 바꾸니 곧은 직선이 돼요!</p></div></div>
+      <div class="ask"><img data-mood="asst_spark" alt="" aria-hidden="true" style="border-color:var(--c-asst)"><p><b class="qa-who" style="color:var(--c-asst)">하루</b> 보통 눈금에선 금방 바닥에 붙는데, 로그 눈금으로 바꾸니 곧은 직선이 돼요!</p></div></div>
   </div>
   <div class="pair">
     <div><div class="tl">일상으로 치면</div>약의 성분이 몸에서 일정한 비율로 빠져나가면, 처음엔 빨리 줄다가 나중엔 거의 줄지 않는 것처럼 보입니다. 실제로는 줄어드는 <b>비율</b>이 그대로입니다.</div>
@@ -222,7 +254,8 @@ section.sec{padding-top:88px}
     <li>넓이는 1, r, r², r³ …으로 줄어듭니다. 앞의 수에 늘 같은 r을 곱하므로 등비수열입니다.</li>
     <li>보통 눈금에서는 뒤쪽 막대가 바닥에 붙어 차이가 안 보입니다. 로그 눈금에서는 꼭대기가 한 직선 위에 섭니다.</li>
     <li>로그 눈금에서 직선이 가파를수록 r이 작습니다. 삼각형(0.25)이 십이각형(0.933)보다 훨씬 가파릅니다.</li></ol>
-    <p class="lim"><b>이 칸의 한계</b> 하나하나의 넓이는 알았지만, 이 조각들을 <b>끝없이 다 더하면</b> 얼마인지는 아직 모릅니다. → ③ 칸</p></div>
+    <p class="interp"><b>박사의 해석</b> 로그 눈금에서 직선이 보이면 "매번 같은 비율로 줄고 있다"고 말할 수 있습니다. 업무 보고에서는 "이 지표는 매달 25%씩 줄고 있다"처럼 비율로 바꿔 말하면 됩니다.</p>
+    <p class="lim"><b>이 단계의 한계</b> 하나하나의 넓이는 알았지만, 이 조각들을 <b>끝없이 다 더하면</b> 얼마인지는 아직 모릅니다. → ③ 단계</p></div>
   <details class="fold"><summary>matplotlib로 그리면 (몰라도 됩니다)</summary>
     <pre>import numpy as np, matplotlib.pyplot as plt
 k = np.arange(0, 13); r = np.cos(np.pi/6)**2
@@ -235,21 +268,25 @@ plt.bar(k, r**k); plt.yscale('log'); plt.show()</pre>
 <section class="sec" id="c3" aria-labelledby="h-c3"><div class="wrap">
   <h2 id="h-c3"><span class="hex">3</span>끝없이 더해도 멈추는 합 — 등비급수</h2>
   <div class="tags"><span class="tag nn">방법: 부분합 쌓기</span><span class="tag fly">일상: 케이크 반씩 먹기</span></div>
+  <p class="where">지금 위치: ① 중점 → ② 등비수열 → <b>③ 등비급수</b> → ④ 단위 · 줄어드는 조각들을 다 더합니다</p>
+  <div data-dlg="c3a"></div>
+  <div class="recap"><b>30초 복습 — 한없이 가까워진다</b> 0.5를 계속 곱하면 0.5, 0.25, 0.125, … 0에 한없이 가까워지지만 0이 되지는 않습니다. 이렇게 어떤 값에 한없이 다가가는 것을 "수렴한다"고 하고, 다가가는 그 값을 "끝값(극한)"이라고 부릅니다.</div>
   <div class="why2">
     <div class="whyb"><h4>왜 이 방법을 쓰나</h4>
       <ol><li><b>문제 상황</b> 나선은 모서리 조각을 끝없이 칠해 만듭니다. 조각이 무한히 많은데 넓이를 말할 수 있을까요?</li>
-        <li><b>앞 칸의 한계</b> ② 칸은 조각 하나하나의 크기만 알려 줬습니다.</li>
+        <li><b>앞 단계의 한계</b> ② 단계는 조각 하나하나의 크기만 알려 줬습니다.</li>
         <li><b>해법</b> k번째까지의 합(<b>부분합</b>)을 차례로 쌓아 보면, 합이 어떤 값에 점점 가까워집니다. 그 끝값이 <b>등비급수</b>의 합 1/(1 − r)입니다.</li></ol>
       <p class="easy"><b>쉽게 말하면</b> 케이크를 반 먹고, 남은 것의 반을 또 먹고 … 아무리 먹어도 케이크 한 판을 넘지 못합니다.</p></div>
-    <div class="amath"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4>
-      <div class="ask"><img data-mood="asst_shock" alt="" aria-hidden="true"><p>"끝없이 더하는데 어떻게 끝이 있어요?"</p></div>
+    <div class="amath"><h4>수식이 어려운 분을 대신해 — 시아가 묻고 하루가 답합니다</h4>
+      <div class="ask"><img data-mood="sia_think" alt="" aria-hidden="true" style="border-color:var(--c-sia)"><p><b class="qa-who" style="color:var(--c-sia)">시아</b> "끝없이 더하는데 어떻게 끝이 있나요? 순서대로 듣고 싶습니다."</p></div>
+      <p style="margin:0 0 6px"><b style="color:var(--c-asst)">하루의 답</b> S<sub>k</sub>는 "에스 케이", k번째까지 더한 합이에요. 핵심은 "남은 차이"가 어떻게 줄어드는지예요.</p>
       <span class="sch">학교 수학으로 보면: 등비수열의 합 · 등비급수(수렴)</span>
       <table><tr><td>S<sub>k</sub></td><td>첫 조각부터 k번째까지의 합 = 1 + r + … + r<sup>k</sup></td></tr>
         <tr><td>1 − r<sup>k+1</sup></td><td>S<sub>k</sub> × (1 − r)를 하면 가운데가 모두 지워지고 남는 것</td></tr>
         <tr><td>r<sup>k+1</sup> → 0</td><td>r이 1보다 작으면 거듭 곱할수록 0에 가까워짐</td></tr>
         <tr><td>1/(1 − r)</td><td>그래서 끝없이 더한 합(첫 조각 = 1일 때)</td></tr></table>
       <p class="try"><b>숫자로 한 번 해 보기</b> 정사각형은 r = 0.5. 1 + 0.5 + 0.25 + 0.125 = 1.875, 남은 차이 0.125. 끝값은 1/(1 − 0.5) = <b>2</b>입니다.</p>
-      <div class="ask"><img data-mood="asst_spark" alt="" aria-hidden="true"><p>더할 때마다 남은 차이가 r배씩 줄어드니까, 2를 넘을 수가 없네요!</p></div></div>
+      <div class="ask"><img data-mood="sia_smile" alt="" aria-hidden="true" style="border-color:var(--c-sia)"><p><b class="qa-who" style="color:var(--c-sia)">시아</b> 확인했습니다. 더할 때마다 남은 차이가 r배씩 줄어드니, 2를 넘을 수가 없네요.</p></div></div>
   </div>
   <div class="pair">
     <div><div class="tl">일상으로 치면</div>목표까지 남은 거리의 절반씩 걸어가면, 아무리 걸어도 목표를 넘지 않고 점점 가까워집니다.</div>
@@ -270,12 +307,17 @@ plt.bar(k, r**k); plt.yscale('log'); plt.show()</pre>
     <li>조각을 하나 칠할 때마다 합이 늘지만, 늘어나는 양이 r배씩 줄어 끝값에 점점 가까워집니다.</li>
     <li>끝값은 1/(1 − r)입니다. 원자료의 예시와 같습니다: 삼각형 4/3, 정사각형 2, 정오각형 약 2.89, 정육각형 4.</li>
     <li>r이 1에 가까울수록 끝값은 커지고, 99%에 닿기까지 조각이 더 많이 필요합니다(삼각형 4개, 정육각형 17개, 십이각형 67개).</li></ol>
-    <p class="lim"><b>이 칸의 한계</b> S = 4라는 숫자는 "첫 조각의 4배"라는 뜻입니다. 도형 넓이와 비교하면 얼마인지는 아직 말하지 않았습니다. → ④ 칸</p></div>
+    <p class="interp"><b>박사의 해석</b> 정육각형의 S = 4는 "첫 조각을 1로 두면 나선 전체는 4"라는 뜻입니다. 99% 기준선(17개)은 "17번째 조각부터는 그려도 거의 티가 안 난다"는 실무 판단의 근거가 됩니다.</p>
+    <p class="lim"><b>이 단계의 한계</b> S = 4라는 숫자는 "첫 조각의 4배"라는 뜻입니다. 도형 넓이와 비교하면 얼마인지는 아직 말하지 않았습니다. → ④ 단계</p></div>
   <details class="fold"><summary>matplotlib로 그리면 (몰라도 됩니다)</summary>
-    <pre>S = np.cumsum(r**k)                     # 부분합
+    <pre>import numpy as np, matplotlib.pyplot as plt
+r = np.cos(np.pi/4)**2                  # 정사각형의 공비 0.5
+k = np.arange(1, 31)                    # 칠한 조각 수 1~30
+S = np.cumsum(r**(k-1))                 # 부분합
 plt.plot(k, S, marker='o')
-plt.axhline(1/(1-r), linestyle='--')    # 끝값 점선</pre>
-    <p>r<sup>k</sup>를 앞에서부터 차례로 더해 부분합을 만들고, 선으로 이은 뒤 끝값 1/(1 − r)을 점선으로 긋습니다.</p></details>
+plt.axhline(1/(1-r), linestyle='--')    # 끝값 점선
+plt.show()</pre>
+    <p>정사각형의 공비를 구하고, 조각 1~30개의 부분합을 차례로 더해 선으로 이은 뒤, 끝값 1/(1 − r)을 점선으로 긋습니다.</p></details>
   <div class="quiz" data-quiz="c3"></div>
 </div></section>
 
@@ -283,21 +325,24 @@ plt.axhline(1/(1-r), linestyle='--')    # 끝값 점선</pre>
 <section class="sec" id="c4" aria-labelledby="h-c4"><div class="wrap">
   <h2 id="h-c4"><span class="hex">4</span>단위를 바꾸면 — 나선은 언제나 도형의 1/n</h2>
   <div class="tags"><span class="tag nn">방법: 단위 맞추기</span><span class="tag fly">설정: 축 제목 읽기</span></div>
+  <p class="where">지금 위치: ① 중점 → ② 등비수열 → ③ 등비급수 → <b>④ 단위</b> · 더한 값을 도형 넓이와 견줍니다</p>
+  <div data-dlg="c4a"></div>
   <div class="why2">
     <div class="whyb"><h4>왜 이 방법을 쓰나</h4>
       <ol><li><b>문제 상황</b> S는 정육각형이 4, 십이각형이 14.9로 커집니다. 그럼 꼭짓점이 많을수록 나선이 큰 걸까요?</li>
-        <li><b>앞 칸의 한계</b> ③ 칸의 S는 "첫 조각 = 1"로 잰 값입니다. 그런데 첫 조각의 크기가 n마다 다릅니다.</li>
+        <li><b>앞 단계의 한계</b> ③ 단계의 S는 "첫 조각 = 1"로 잰 값입니다. 그런데 첫 조각의 크기가 n마다 다릅니다.</li>
         <li><b>해법</b> 단위를 "원래 도형의 넓이 = 1"로 맞춥니다. 그러면 나선의 넓이는 언제나 <b>1/n</b>입니다.</li></ol>
       <p class="easy"><b>쉽게 말하면</b> 단계마다 깎여 나가는 모서리 n개 가운데 늘 하나만 칠합니다. 깎인 조각을 모두 모으면 도형 전체이니, 칠한 몫은 n개 중 하나, 곧 1/n입니다.</p></div>
-    <div class="amath"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4>
-      <div class="ask"><img data-mood="asst_shock" alt="" aria-hidden="true"><p>"S가 4면 색칠한 게 도형보다 4배 크다는 거예요?"</p></div>
+    <div class="amath" style="border-left-color:var(--c-sia)!important"><h4 style="color:var(--c-sia)">수식이 어려운 분을 대신해 — 하루가 묻고 시아가 답합니다</h4>
+      <div class="ask"><img data-mood="asst_shock" alt="" aria-hidden="true" style="border-color:var(--c-asst)"><p><b class="qa-who" style="color:var(--c-asst)">하루</b> "시아, S가 4면 색칠한 게 도형보다 4배 크다는 거야?"</p></div>
+      <p style="margin:0 0 6px"><b style="color:var(--c-sia)">시아의 답</b> 아닙니다. 먼저 무엇을 1로 뒀는지 보겠습니다. A는 원래 도형의 넓이입니다.</p>
       <span class="sch">학교 수학으로 보면: 등비급수 · 같은 몫으로 나누기</span>
       <table><tr><td>A</td><td>원래 도형의 넓이</td></tr>
         <tr><td>A(1 − r)</td><td>한 단계에 깎여 나가는 테두리 전체 (모서리 n개)</td></tr>
         <tr><td>A(1 − r)/n</td><td>모서리 하나 = 첫 조각</td></tr>
-        <tr><td>× 1/(1 − r)</td><td>③ 칸의 S를 곱하면 (1 − r)이 지워져 A/n</td></tr></table>
+        <tr><td>× 1/(1 − r)</td><td>③ 단계의 S를 곱하면 (1 − r)이 지워져 A/n</td></tr></table>
       <p class="try"><b>숫자로 한 번 해 보기</b> 정육각형, A = 1: 첫 조각 = 0.25 ÷ 6 ≈ 0.0417. 여기에 S = 4를 곱하면 0.1667 = <b>1/6</b>. 도형의 약 16.7%입니다.</p>
-      <div class="ask"><img data-mood="asst_spark" alt="" aria-hidden="true"><p>4배가 아니라 "첫 조각의 4배"였군요. 첫 조각이 작으니 전체도 1/6이에요!</p></div></div>
+      <div class="ask"><img data-mood="asst_spark" alt="" aria-hidden="true" style="border-color:var(--c-asst)"><p><b class="qa-who" style="color:var(--c-asst)">하루</b> 4배가 아니라 "첫 조각의 4배"였구나. 첫 조각이 작으니 전체도 1/6이야!</p></div></div>
   </div>
   <div class="pair">
     <div><div class="tl">일상으로 치면</div>"매출이 지난달의 300%!"라고 해도 지난달이 1만 원이었다면 이번 달은 3만 원입니다. 비율 숫자는 <b>무엇에 대한</b> 비율인지 함께 봐야 합니다.</div>
@@ -316,14 +361,34 @@ plt.axhline(1/(1-r), linestyle='--')    # 끝값 점선</pre>
     <li>왼쪽 차트(S)는 n이 커질수록 올라가고, 오른쪽 차트(실제 몫)는 내려갑니다. 같은 나선인데 단위만 달라서 방향이 반대입니다.</li>
     <li>S가 커지는 까닭은 첫 조각이 아주 빨리 작아지기 때문입니다. 작은 것을 1로 두니 몇 배인지가 커질 뿐입니다.</li>
     <li>실제 넓이는 삼각형 1/3, 정사각형 1/4, 정육각형 1/6 … 언제나 1/n입니다. 원자료에는 없는, 이 그림의 가장 깔끔한 결론입니다.</li></ol>
-    <p class="lim"><b>이 칸의 한계</b> 이 결론은 정다각형과 "끝없이 칠한다"는 이상적인 경우에 맞습니다. 실제 그림은 몇십 단계에서 픽셀보다 작아져 멈춥니다.</p></div>
+    <p class="interp"><b>박사의 해석</b> 같은 나선을 두고 왼쪽 차트는 "커진다", 오른쪽 차트는 "작아진다"고 말합니다. 보고서에서 숫자를 쓸 때는 반드시 "무엇을 100으로 둔 값인지"를 한 줄 붙이세요.</p>
+    <p class="lim"><b>이 단계의 한계</b> 이 결론은 정다각형과 "끝없이 칠한다"는 이상적인 경우에 맞습니다. 실제 그림은 몇십 단계에서 픽셀보다 작아져 멈춥니다.</p></div>
   <div class="quiz" data-quiz="c4"></div>
+</div></section>
+
+<!-- AI 판단 코너 -->
+<section class="sec" id="aic" aria-labelledby="h-aic"><div class="wrap">
+  <div class="aic">
+  <h3 id="h-aic">AI 판단 코너 — AI가 써 준 보고 문장, 그대로 믿어도 될까?</h3>
+  <p>계산은 프로그램과 AI가 1초 만에 해 줍니다. 우리에게 필요한 힘은 그 결과를 <b>읽고 판단하는 힘</b>입니다. 아래는 AI 도우미에게 "꼭짓점 수에 따른 나선 넓이를 분석해 줘"라고 했을 때 나올 법한 답입니다(설명용으로 만든 예시).</p>
+  <div class="aiout"><small>AI 도우미의 답 (예시)</small>"분석 결과, 십이각형의 나선 넓이는 14.93으로 삼각형(1.33)의 약 <b>11.2배</b>입니다. 따라서 꼭짓점이 많을수록 나선이 도형을 더 많이 덮습니다. 또 그림을 보면 30단계쯤에서 조각이 사라지므로, 나선은 <b>30조각에서 끝납니다</b>."</div>
+  <div data-dlg="aic"></div>
+  <ol>
+    <li><b>숫자가 그럴듯한가?</b> "14.93 ÷ 1.33 ≈ 11.2"라는 나눗셈은 맞을까요?
+      <div class="chk" data-aic="0"><button class="bt" type="button" data-v="1">나눗셈은 맞다</button><button class="bt" type="button" data-v="0">나눗셈부터 틀렸다</button></div><span class="fb" aria-live="polite"></span></li>
+    <li><b>단위는 무엇인가?</b> AI가 "나선 넓이 14.93"이라고 쓴 숫자는 무엇을 1로 둔 값일까요?
+      <div class="chk" data-aic="1"><button class="bt" type="button" data-v="0">원래 도형의 넓이</button><button class="bt" type="button" data-v="1">첫 조각의 넓이</button></div><span class="fb" aria-live="polite"></span></li>
+    <li><b>가정이 맞는가?</b> "나선은 30조각에서 끝난다"는 말은?
+      <div class="chk" data-aic="2"><button class="bt" type="button" data-v="0">맞다. 그림에서 사라졌으니까</button><button class="bt" type="button" data-v="1">그림이 너무 작아져 안 보일 뿐, 수학적으로는 끝없이 이어진다</button></div><span class="fb" aria-live="polite"></span></li>
+  </ol>
+  <p class="interp"><b>박사의 정리</b> AI의 계산이 맞아도 결론은 틀릴 수 있습니다. AI가 낸 결과를 받으면 세 가지를 물어보세요. ① 무엇을 1로 둔 숫자인가(단위) ② 어떤 가정 위의 결과인가 ③ 숫자가 상식에 맞는가(도형 안에 그린 나선이 그 도형보다 14배 넓을 수 있을까?).</p>
+  </div>
 </div></section>
 
 <!-- 대결 -->
 <section class="sec" id="duel" aria-labelledby="h-duel"><div class="wrap">
   <h2 id="h-duel">대결 — 포스터를 가장 많이 칠하려면 몇 각형?</h2>
-  <p class="lead">인턴 모아가 수업 포스터에 나선을 크게 넣으려고 합니다. 도형 넓이 가운데 <b>나선이 칠하는 몫</b>이 가장 큰 도형을 고르고 싶어요. 주판봇은 S가 가장 큰 십이각형(S ≈ 14.9)을, 초파리 연구원은 삼각형(S ≈ 1.33)을 고릅니다. 판정 기준은 <b>도형 넓이 중 나선이 차지하는 비율</b>입니다.</p>
+  <p class="lead">인턴 모아가 수업 포스터에 나선을 크게 넣으려고 합니다. 도형 넓이 가운데 <b>나선이 칠하는 몫</b>이 가장 큰 도형을 고르고 싶어요. 주판봇은 S가 가장 큰 십이각형(S ≈ 14.9)을, 초파리 연구원은 삼각형(S ≈ 1.33)을 고릅니다. 판정 기준은 <b>도형 넓이 중 나선이 차지하는 비율</b>이고, 심판은 인턴 시아가 맡습니다.</p>
   <div class="duel">
     <div class="side l"><div class="head"><img id="d-fly" data-mood="fly_magnify" alt="" aria-hidden="true"><div><b style="color:var(--c-fly)">초파리 연구원</b><br><span class="muted">"S가 뭘 1로 잰 건지부터 봐. 난 삼각형."</span></div></div></div>
     <div class="vs">VS</div>
@@ -341,6 +406,26 @@ plt.axhline(1/(1-r), linestyle='--')    # 끝값 점선</pre>
     </div>
   </div>
   <div class="quiz" data-quiz="duel"></div>
+</div></section>
+
+<!-- 연습 -->
+<section class="sec" id="practice" aria-labelledby="h-prac"><div class="wrap">
+  <h2 id="h-prac">연습 — 정팔각형으로 직접 해 보기</h2>
+  <p>이번에는 여러분 차례입니다. 정팔각형(n = 8)으로 ①~④ 단계를 한 번씩 계산하고 해석해 보세요. 계산기를 써도 됩니다. 점수는 저장되지 않으니 틀려도 괜찮아요.</p>
+  <div data-dlg="prac"></div>
+  <div class="prac" data-p="0"><h4>문제 1 · 넓이 비율 r</h4><p>정팔각형의 중점을 이으면 안쪽 정팔각형의 넓이는 몇 배일까요? 소수 넷째 자리까지 적어 보세요.</p>
+    <input type="text" inputmode="decimal" aria-label="문제 1 답" placeholder="예: 0.5"> <button class="bt primary" type="button">채점</button><div class="fb" aria-live="polite"></div>
+    <details><summary>단계별 풀이</summary><ol><li>180° ÷ 8 = 22.5°</li><li>cos 22.5° ≈ 0.9239</li><li>제곱하면 0.9239 × 0.9239 ≈ <b>0.8536</b></li></ol><p><b style="color:var(--c-fly)">초파리의 흔한 실수</b> 제곱을 잊고 0.9239라고 쓰기. 0.9239는 길이 비율입니다.</p></details></div>
+  <div class="prac" data-p="1"><h4>문제 2 · 나선의 크기 S</h4><p>첫 조각을 1로 두면, 정팔각형 나선 전체의 크기 S는 얼마일까요? 소수 둘째 자리까지 적어 보세요.</p>
+    <input type="text" inputmode="decimal" aria-label="문제 2 답" placeholder="예: 2"> <button class="bt primary" type="button">채점</button><div class="fb" aria-live="polite"></div>
+    <details><summary>단계별 풀이</summary><ol><li>S = 1 ÷ (1 − r)</li><li>1 − 0.8536 = 0.1464</li><li>1 ÷ 0.1464 ≈ <b>6.83</b></li></ol><p><b style="color:var(--c-fly)">초파리의 흔한 실수</b> 1 ÷ r로 계산해 1.17이라고 쓰기. 빼기를 먼저 해야 합니다.</p></details></div>
+  <div class="prac" data-p="2"><h4>문제 3 · 도형 넓이 중 나선의 몫</h4><p>정팔각형 넓이를 100%로 두면, 나선은 몇 %를 차지할까요? 소수 첫째 자리까지 적어 보세요.</p>
+    <input type="text" inputmode="decimal" aria-label="문제 3 답 (퍼센트)" placeholder="예: 25"> % <button class="bt primary" type="button">채점</button><div class="fb" aria-live="polite"></div>
+    <details><summary>단계별 풀이</summary><ol><li>첫 조각 = (1 − r) ÷ 8 = 0.1464 ÷ 8 ≈ 0.0183</li><li>나선 = 첫 조각 × S = 0.0183 × 6.83 ≈ 0.125</li><li>곧 1/8 = <b>12.5%</b></li></ol><p><b style="color:var(--c-fly)">초파리의 흔한 실수</b> S = 6.83을 그대로 683%라고 쓰기. S의 단위는 첫 조각입니다.</p></details></div>
+  <div class="prac" data-p="3"><h4>문제 4 · 해석 문장 고르기</h4><p>정팔각형 나선을 보고서에 한 줄로 쓴다면 가장 알맞은 것은?</p>
+    <div class="chk" style="display:flex;flex-wrap:wrap;gap:6px"><button class="bt" type="button" data-v="0">"나선은 도형보다 6.83배 넓다."</button><button class="bt" type="button" data-v="1">"나선은 첫 조각의 6.83배이며, 도형 넓이의 12.5%를 차지한다."</button><button class="bt" type="button" data-v="0">"나선은 30조각에서 끝나며 그 뒤는 0이다."</button></div><div class="fb" aria-live="polite"></div></div>
+  <p class="score" id="pracScore" aria-live="polite">맞힌 문제: 0 / 4</p>
+  <p class="muted" style="font-size:13px">정팔각형 값은 이 페이지가 계산한 값이며, 허용 오차를 두고 채점합니다(r ±0.002, S ±0.02, 몫 ±0.2%p).</p>
 </div></section>
 
 <!-- 정리 -->
@@ -365,9 +450,10 @@ plt.axhline(1/(1-r), linestyle='--')    # 끝값 점선</pre>
   </ul>
   <h3>데이터시각화 수업으로 가져가기</h3>
   <ul>
-    <li>같은 비율로 줄거나 느는 값은 <b>로그 눈금</b>으로 그려 직선인지 먼저 봅니다(② 칸).</li>
-    <li>누적 그래프에는 <b>끝값 점선과 기준선</b>(예: 99%)을 함께 그립니다(③ 칸).</li>
-    <li>두 단위의 값을 비교할 때는 이중 축 대신 <b>두 차트로 나누고</b>, 축 제목에 "무엇을 1로 두었는지"를 적습니다(④ 칸).</li>
+    <li>같은 비율로 줄거나 느는 값은 <b>로그 눈금</b>으로 그려 직선인지 먼저 봅니다(② 단계).</li>
+    <li>누적 그래프에는 <b>끝값 점선과 기준선</b>(예: 99%)을 함께 그립니다(③ 단계).</li>
+    <li>AI가 낸 결과는 <b>단위·가정·상식</b> 세 가지를 물어 확인합니다(AI 판단 코너).</li>
+    <li>두 단위의 값을 비교할 때는 이중 축 대신 <b>두 차트로 나누고</b>, 축 제목에 "무엇을 1로 두었는지"를 적습니다(④ 단계).</li>
   </ul>
 </div></section>
 
@@ -423,34 +509,60 @@ function spiral(g,n,cx,cy,R,pieces,depth,opt){opt=opt||{};var L=PM.levels(n,cx,c
   return L;}
 
 /* ── 대사 ── */
+U.NAMES.x1='방청석 X1';U.NAMES.x2='방청석 X2';U.NAMES.x3='방청석 X3';
 var DLG={
- hero:[["doc","doc_front","오늘은 도형 안에 숨은 등비급수를 그려 볼 거예요. 그림 하나가 식 하나를 증명합니다."],
-       ["asst","asst_smile","수식이 나오면 제가 대신 물어볼게요. 숫자도 제가 다시 계산해 둘게요."],
-       ["fly","fly_magnify","그림이 예쁘다고 숫자까지 맞는 건 아니지. 단위부터 볼 거야."],
-       ["robo","robo_coin","S가 2, 2.89, 4로 쑥쑥 크잖아? 꼭짓점 많은 쪽에 투자!"]],
- c1:[["doc","doc_think","중점을 이으면 정말 같은 모양이 나올까요?"],
-     ["robo","robo_coin","당연하지. 꼭짓점을 아무렇게나 이어도 비슷하게 나와!"],
-     ["fly","fly_point","아무렇게나는 아니야. 아래에서 n을 바꾸고 '중점 표시'를 눌러 봐."]],
- c2:[["doc","doc_think","단계를 열 번 넘기면 넓이가 얼마나 남을까요?"],
+ hero:[["doc","doc_front","오늘은 도형 안에 숨은 등비급수를 그려 볼 거예요. 그림 하나가 식 하나를 증명합니다. 중간에 막혀도 괜찮아요."],
+       ["asst","asst_smile","오늘은 시아랑 제가 서로 묻고 답할게요. 시아, 준비됐어?"],
+       ["sia","sia_guide","준비됐습니다. 순서대로 묻고, 순서대로 답하겠습니다."],
+       ["fly","fly_magnify","그림이 예쁘다고 숫자까지 맞는 건 아니지. 단위는 내가 볼게."],
+       ["robo","robo_coin","S가 2, 2.89, 4로 쑥쑥 크잖아? 꼭짓점 많은 쪽에 투자!"],
+       ["moa","moa_sparkle","저는 대결 때 쓸 포스터를 준비할게요. 다들 힘내세요!"]],
+ c1a:[["doc","doc_think","포스터에 같은 그림을 점점 작게 겹쳐 넣으려면, 한 번에 얼마나 줄여야 모양이 안 찌그러질까요?"],
+      ["asst","asst_smile","처음 보는 기호가 나와도 괜찮아요. 시아랑 하나씩 읽어 볼게요."]],
+ c1:[["sia","sia_think","하루, 중점을 이으면 정말 같은 모양이 나오나요?"],
+     ["asst","asst_report","응, 정다각형이면 늘 같은 모양이야. 조금 돌아갈 뿐이고."],
+     ["robo","robo_coin","꼭짓점끼리 아무렇게나 이어도 비슷하게 나와!"],
+     ["fly","fly_point","아무렇게나는 아니야. 아래에서 n을 바꾸고 '중점 표시'를 눌러 봐."],
+     ["x1","x1_hint","(힌트 카드를 들어 보인다) \"길이가 cos배면, 넓이는 cos²배\""]],
+ c2a:[["doc","doc_think","재고가 매달 25%씩 팔려 나가면, 열 달 뒤엔 얼마나 남을까요? 같은 질문을 도형에 해 봅시다."],
+      ["sia","sia_smile","표로 정리하면 금방 보입니다. 천천히 따라오셔도 됩니다."]],
+ c2:[["asst","asst_shock","시아, 열 번 넘게 줄이면 넓이가 0이 되는 거 아니야?"],
+     ["sia","sia_explain","0이 아니라 아주 작은 수입니다. 보통 눈금에서는 바닥에 붙어 보일 뿐입니다."],
      ["robo","robo_calc","막대가 바닥에 붙었네. 0이 됐으니 계산 끝!"],
-     ["fly","fly_point","0이 아니라 아주 작은 거야. '로그 눈금'을 눌러 봐."],
-     ["asst","asst_report","로그 눈금으로 보니 막대 꼭대기가 한 줄로 서요. 10단계 값은 아래 숫자 칸에 있어요."]],
- c3:[["doc","doc_think","조각을 끝없이 칠하면 합도 끝없이 커질까요?"],
+     ["fly","fly_point","그건 눈금 탓이야. '로그 눈금'을 눌러 봐."],
+     ["x2","x2_hint","(…끄덕이며 자를 대 본다) 막대 꼭대기가 한 줄."]],
+ c3a:[["doc","doc_think","목표까지 남은 거리의 절반씩 걸으면, 언젠가 목표를 지나칠까요?"],
+      ["asst","asst_smile","여기서 다들 한 번씩 멈춰요. 저도 그랬어요. 천천히 가요."]],
+ c3:[["sia","sia_think","하루, 조각을 끝없이 칠하면 합도 끝없이 커지나요?"],
+     ["asst","asst_report","더하는 양이 r배씩 줄어서, 합은 끝값 근처에서 멈춰."],
      ["robo","robo_coin","무한 번 더하면 무한대지! 큰 수는 언제나 환영."],
-     ["fly","fly_point","'하나씩 칠하기'를 눌러서 오른쪽 선이 점선을 넘는지 봐."]],
- c4:[["doc","doc_think","S가 클수록 나선이 도형을 더 많이 칠할까요?"],
+     ["fly","fly_point","'하나씩 칠하기'를 눌러서 오른쪽 선이 점선을 넘는지 봐."],
+     ["x3","x3_hint","(짝짝짝) 99% 선에 노란 깃발을 꽂아 둔다."]],
+ c4a:[["doc","doc_think","\"매출 300% 성장!\" 이 말만 듣고 투자해도 될까요? 먼저 무엇을 100으로 뒀는지 물어야겠죠."],
+      ["sia","sia_guide","여기가 이 페이지의 핵심입니다. 두 차트의 축 제목을 꼭 읽어 주세요."]],
+ c4:[["asst","asst_shock","시아, S가 클수록 나선이 도형을 더 많이 칠하는 거지?"],
+     ["sia","sia_explain","확인해 보겠습니다. S는 첫 조각을 1로 둔 값이라, 도형과 바로 비교할 수 없습니다."],
      ["robo","robo_happy","S가 14.9면 삼각형의 열 배가 넘잖아. 답은 정해졌어."],
-     ["fly","fly_point","두 차트의 축 제목을 읽어 봐. 무엇을 1로 뒀는지가 달라."]],
+     ["fly","fly_point","두 차트의 축 제목을 읽어 봐. 무엇을 1로 뒀는지가 달라."],
+     ["moa","moa_ok","포스터에 적을 문장도 여기서 정해야겠네요!"]],
+ aic:[["robo","robo_happy","이 보고서 그대로 제출하자! AI가 썼으니 틀릴 리 없지."],
+      ["doc","doc_think","잠깐, 가정이 맞을까요? 숫자가 그럴듯한가요? 아래 세 질문에 답해 봅시다."],
+      ["x2","x2_hint","(…조용히 '단위' 카드를 내민다)"]],
+ prac:[["sia","sia_guide","이번엔 여러분 차례입니다. 정팔각형으로 순서대로 풀어 보세요."],
+       ["asst","asst_smile","막히면 '단계별 풀이'를 펼쳐도 돼요. 저도 처음엔 그랬어요."]],
  outro:[["doc","doc_magic","오늘의 세 줄입니다.<br>① 중점을 이으면 넓이가 r = cos²(π/n)배인 닮은꼴이 생긴다.<br>② 넓이는 등비수열, 조각을 다 더하면 등비급수 1/(1 − r)에 멈춘다.<br>③ 단위를 도형 넓이로 바꾸면 나선은 언제나 도형의 1/n이다."],
         ["fly","fly_arms","숫자가 크다고 넓은 게 아니야. 무엇을 1로 뒀는지가 먼저지."],
         ["robo","robo_sigh","S만 보고 몰빵했다가 손절이네… 다음엔 축 제목부터 읽고 투자할게."],
-        ["asst","asst_proud","차트를 만들 때도 똑같아요. 로그 눈금, 끝값 점선, 그리고 축 제목의 단위까지!"]]
+        ["sia","sia_think","하루, 오늘 배운 걸 차트 만들 때 쓰려면 무엇부터 해야 하나요?"],
+        ["asst","asst_proud","줄어드는 값은 로그 눈금, 누적은 끝값 점선, 그리고 축 제목에 단위! 이 세 가지야."],
+        ["moa","moa_cheer","포스터 완성! 축 제목도 적었어요."],
+        ["x3","x3_hint","(짝짝짝)"]]
 };
 U.dialogues(DLG);
-var CAST=[["doc","doc_front","박사","해설하고 대결을 판정해요."],["asst","asst_smile","조수 하루","수식을 대신 묻고 숫자를 발표해요."],["fly","fly_magnify","초파리 연구원","의심하는 쪽. 단위부터 확인해요."],["robo","robo_coin","주판봇","확신하는 쪽. 큰 숫자를 좋아해요."],["moa","moa_sparkle","인턴 모아","대결의 포스터를 만들어요."]];
+var CAST=[["doc","doc_front","박사","상황 질문을 던지고 해석을 정리해요."],["asst","asst_smile","조수 하루","시아와 서로 묻고 답해요."],["sia","sia_smile","인턴 시아","꼼꼼히 정리해 답하고, 대결 심판을 맡아요."],["fly","fly_magnify","초파리 연구원","의심하는 쪽. 단위부터 확인해요."],["robo","robo_coin","주판봇","확신하는 쪽. AI 결과를 그대로 믿어요."],["moa","moa_sparkle","인턴 모아","응원하고 대결의 포스터를 만들어요."]];
 $('#castgrid').innerHTML=CAST.map(function(c){return '<div class="castc" style="--cc:var(--c-'+c[0]+')"><img src="'+U.spr(c[1])+'" alt="" aria-hidden="true"><div><b>'+c[2]+'</b><p>'+c[3]+'</p></div></div>';}).join('');
-$('#secretrow').innerHTML=['x1','x2','x3'].map(function(x,i){return U.say(x,x+'_hint',['(반짝)','(…끄덕)','(짝짝짝)'][i]);}).join('');
-$('#secretbtn').onclick=function(){var r=$('#secretrow');r.hidden=!r.hidden;this.setAttribute('aria-expanded',String(!r.hidden));this.textContent=r.hidden?'방청석 보기 (미공개 식구)':'방청석 닫기';};
+$('#secretrow').innerHTML=[['x1','힌트 카드 담당. 막힐 때 한 줄 힌트를 들어요.'],['x2','자와 단위 카드 담당. 조용히 끄덕여요.'],['x3','박수와 깃발 담당. 기준선에 깃발을 꽂아요.']].map(function(x,i){return U.say(x[0],x[0]+'_hint',x[1],i%2===1);}).join('');
+$('#secretbtn').onclick=function(){var r=$('#secretrow');r.hidden=!r.hidden;this.setAttribute('aria-expanded',String(!r.hidden));this.textContent=r.hidden?'방청석 소개 보기 (X1·X2·X3)':'방청석 소개 닫기';};
 U.fillImgs();
 
 /* ── 표지 (그림판) ── */
@@ -531,11 +643,28 @@ U.Duel({el:'#duel',run:function(){return {fly:{n:3,S:PM.S(3),f:PM.first(3),sh:PM
   $('#d-bf').style.width=(r.fly.sh/0.4*100)+'%';$('#d-br').style.width=(r.robo.sh/0.4*100)+'%';$('#d-vf').textContent=fmt(r.fly.sh*100,1)+'%';$('#d-vr').textContent=fmt(r.robo.sh*100,1)+'%';
   var flyWin=r.fly.sh>r.robo.sh;
   $('#d-say').innerHTML=U.say('asst','asst_report','발표합니다. 삼각형의 나선은 도형의 '+fmt(r.fly.sh*100,1)+'%, 십이각형의 나선은 '+fmt(r.robo.sh*100,1)+'%예요. S는 십이각형이 '+fmt(r.robo.S,2)+'로 훨씬 크지만, 첫 조각이 도형의 '+fmt(r.robo.f*100,2)+'%밖에 안 돼요.')+
-    U.say('doc','doc_judge','판정합니다. 기준은 도형 넓이 중 나선의 몫이다. '+fmt(r.fly.sh*100,1)+'% 대 '+fmt(r.robo.sh*100,1)+'%. 초파리 승.',true)+
-    U.say('moa','moa_cheer','삼각형으로 할게요! 포스터에 축 제목도 꼭 적을게요.');
+    U.say('sia','sia_signal','판정 신호 올립니다. 기준은 도형 넓이 중 나선의 몫입니다. '+fmt(r.fly.sh*100,1)+'% 대 '+fmt(r.robo.sh*100,1)+'%. 초파리 연구원 승입니다.',true)+
+    U.say('doc','doc_judge','주판봇의 S도 계산은 맞았어요. 다만 "첫 조각의 몇 배"를 "도형의 몇 배"로 읽은 게 실수였죠. 숫자를 쓸 땐 단위부터.')+
+    U.say('moa','moa_cheer','삼각형으로 할게요! 포스터에 축 제목도 꼭 적을게요.',true);
   U.fillImgs();$('#d-score').textContent='이번 판: '+(flyWin?'초파리 연구원 승 (F)':'주판봇 승 (R)');$('#d-pred').textContent=pred?('내 예상: '+(pred==='fly'?'초파리':'주판봇')+' → '+((pred==='fly')===flyWin?'맞힘':'빗나감')):'예상을 고르지 않았어요';
   U.setMood($('#d-fly'),flyWin?'fly_arms':'fly_coffee');U.setMood($('#d-robo'),flyWin?'robo_sigh':'robo_happy');},
  reset:function(){U.setMood($('#d-fly'),'fly_magnify');U.setMood($('#d-robo'),'robo_coin');}});
+
+/* ── AI 판단 코너 ── */
+var AIFB=[['맞아요. 14.93 ÷ 1.33 ≈ 11.2. 계산은 맞습니다. 문제는 계산이 아니라 다음 두 질문에 있어요.','다시 계산해 보세요. 14.93 ÷ 1.33 ≈ 11.2로, 나눗셈 자체는 맞습니다.'],
+ ['맞아요. 14.93은 "첫 조각 = 1"로 잰 S입니다. 도형 넓이로 바꾸면 십이각형 나선은 8.3%, 삼각형 나선은 33.3%예요.','아니에요. 도형 넓이가 1이라면 나선이 도형보다 14배 넓다는 뜻이 되어 상식에 맞지 않아요. 14.93은 "첫 조각 = 1" 단위입니다.'],
+ ['맞아요. 30조각쯤에서 조각이 화면의 점보다 작아질 뿐, 수학에서는 끝없이 이어집니다. 그래서 끝값을 그림이 아니라 식으로 구합니다.','아니에요. 안 보이는 것과 없는 것은 다릅니다. 조각은 r배씩 작아지며 끝없이 이어집니다.']];
+U.$$('[data-aic]').forEach(function(box){var q=+box.dataset.aic,fb=box.nextElementSibling;U.$$('button',box).forEach(function(b){b.setAttribute('aria-pressed','false');b.onclick=function(){U.$$('button',box).forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');var ok=b.dataset.v==='1';fb.innerHTML='<b style="color:var('+(ok?'--gfp':'--eye')+')">'+(ok?'맞아요':'다시 보기')+'</b> '+AIFB[q][ok?0:1].replace(/^(맞아요|아니에요|다시 계산해 보세요)\. ?/,'');};});});
+
+/* ── 연습 ── */
+var PR=[{ans:PM.r(8),tol:0.002,fmt:4},{ans:PM.S(8),tol:0.02,fmt:2},{ans:100/8,tol:0.2,fmt:1}],pOK=[false,false,false,false];
+function pScore(){var n=pOK.filter(Boolean).length;$('#pracScore').innerHTML='맞힌 문제: <b>'+n+' / 4</b>'+(n===4?' · 모두 맞혔어요! 초파리 연구원도 인정합니다.':(n>0&&n<3?' · ③·④ 단계의 풀이를 한 번 더 보고 오세요.':''));}
+U.$$('.prac[data-p]').forEach(function(box){var k=+box.dataset.p,fb=U.$('.fb',box);
+  if(k<3){var inp=U.$('input',box),bt=U.$('button',box);var go=function(){var v=parseFloat(String(inp.value).replace(',','.').replace('%',''));if(isNaN(v)){fb.innerHTML='<span class="no">숫자를 적어 주세요.</span>';return;}
+      var c=PR[k],ok=Math.abs(v-c.ans)<=c.tol;pOK[k]=ok;fb.innerHTML=ok?'<span class="ok">정답</span> '+fmt(c.ans,c.fmt)+(k===2?'%':'')+' — 잘했어요.':'<span class="no">아직이에요</span> 적은 값 '+v+'. "단계별 풀이"를 펼쳐 보세요.';pScore();};
+    bt.onclick=go;inp.onkeydown=function(e){if(e.key==='Enter')go();};}
+  else{U.$$('button',box).forEach(function(b){b.setAttribute('aria-pressed','false');b.onclick=function(){U.$$('button',box).forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');var ok=b.dataset.v==='1';pOK[3]=ok;
+    fb.innerHTML=ok?'<span class="ok">정답</span> 단위(첫 조각)와 실제 몫(도형의 12.5%)을 함께 썼어요.':'<span class="no">다시 보기</span> '+(b.textContent.indexOf('6.83배 넓다')>=0?'S의 단위는 첫 조각이에요. 도형과 바로 견줄 수 없어요.':'안 보이는 것과 없는 것은 달라요. 조각은 끝없이 이어집니다.');pScore();};});}});
 
 /* ── 용어·퀴즈 ── */
 U.Gloss({
@@ -547,19 +676,20 @@ U.Gloss({
  '부분합':['부분합 S_k','급수','처음부터 k번째까지 더한 값.'],
  '등비급수':['등비급수','급수','등비수열을 끝없이 더한 것. |r| < 1이면 1/(1 − r)에 멈춘다.'],
  '로그 눈금':['로그 눈금','시각화','1, 0.1, 0.01처럼 10배마다 같은 간격인 축. 같은 비율의 변화가 직선이 된다.'],
+ '수렴':['수렴','급수','어떤 값에 한없이 가까워지는 것. 가까워지는 그 값이 끝값(극한).'],
  '점근선':['점근선','시각화','그래프가 한없이 다가가지만 닿지 않는 선. 여기서는 끝값 점선.'],
  '이중 축':['이중 축','시각화','한 차트의 왼쪽·오른쪽에 서로 다른 단위의 축을 두는 방식. 눈금을 바꾸면 인상이 크게 달라진다.'],
  '버블 차트':['버블 차트','시각화','값을 원의 크기로 보여 주는 차트. 값은 반지름이 아니라 넓이에 맞춘다.']
-},['정다각형','중점','닮은꼴','등비수열','공비','부분합','등비급수','로그 눈금','점근선','이중 축','버블 차트']);
+},['정다각형','중점','닮은꼴','등비수열','공비','부분합','등비급수','로그 눈금','수렴','점근선','이중 축','버블 차트']);
 U.Study({quiz:{
  c1:[{q:'정사각형의 각 변의 중점을 이어 만든 안쪽 정사각형의 넓이는 처음의 몇 배?',o:['0.5배','0.25배','0.71배'],a:0,why:'길이는 cos 45° ≈ 0.71배, 넓이는 그 제곱인 0.5배입니다.',hint:'넓이비는 길이비의 제곱이에요.'},
      {q:'꼭짓점 수 n이 커지면 넓이 비율 r = cos²(π/n)은?',o:['0에 가까워진다','변하지 않는다','1에 가까워진다'],a:2,why:'원에 가까운 도형은 중점을 이어도 거의 줄지 않습니다. n = 12면 r ≈ 0.933.',hint:'슬라이더로 n을 12까지 밀어 보세요.'}],
  c2:[{q:'정육각형(r = 0.75)에서 3단계 뒤 넓이는? (처음 = 1)',o:['0.25','약 0.42','0.75'],a:1,why:'0.75 × 0.75 × 0.75 ≈ 0.4219.',hint:'r을 세 번 곱하세요.'},
-     {q:'같은 비율로 줄어드는 값을 로그 눈금으로 그리면?',o:['곧은 직선이 된다','모두 0에 붙는다','점점 가팔라지는 곡선이 된다'],a:0,why:'로그 눈금은 10배마다 같은 간격이라, 매번 같은 비율로 줄면 같은 높이씩 내려갑니다.',hint:'② 칸의 "로그 눈금" 단추.'}],
+     {q:'같은 비율로 줄어드는 값을 로그 눈금으로 그리면?',o:['곧은 직선이 된다','모두 0에 붙는다','점점 가팔라지는 곡선이 된다'],a:0,why:'로그 눈금은 10배마다 같은 간격이라, 매번 같은 비율로 줄면 같은 높이씩 내려갑니다.',hint:'② 단계의 "로그 눈금" 단추.'}],
  c3:[{q:'정사각형(r = 0.5)의 나선 조각을 끝없이 더하면? (첫 조각 = 1)',o:['끝없이 커진다','2','1.875'],a:1,why:'1/(1 − 0.5) = 2. 1.875는 조각 4개까지의 부분합입니다.',hint:'끝값 공식 1/(1 − r).'},
-     {q:'정육각형 나선이 합의 99%에 닿으려면 조각이 몇 개 필요할까?',o:['4개','67개','17개'],a:2,why:'0.75를 거듭 곱해 0.01 아래로 내려가는 데 17번이 걸립니다. 4개는 삼각형, 67개는 십이각형입니다.',hint:'③ 칸의 노란 세로선.'}],
+     {q:'정육각형 나선이 합의 99%에 닿으려면 조각이 몇 개 필요할까?',o:['4개','67개','17개'],a:2,why:'0.75를 거듭 곱해 0.01 아래로 내려가는 데 17번이 걸립니다. 4개는 삼각형, 67개는 십이각형입니다.',hint:'③ 단계의 노란 세로선.'}],
  c4:[{q:'정육각형 나선의 S = 4는 무엇을 뜻할까?',o:['첫 조각의 4배','도형 넓이의 4배','도형 넓이의 4%'],a:0,why:'S는 첫 조각을 1로 둔 값입니다. 첫 조각이 도형의 1/24이라 나선 전체는 4/24 = 1/6입니다.',hint:'S를 잴 때 무엇을 1로 뒀나요?'},
-     {q:'정팔각형 나선은 도형 넓이의 얼마를 차지할까?',o:['1/8','S와 같은 6.83배','1/6.83'],a:0,why:'첫 조각 (1 − r)/n에 S = 1/(1 − r)을 곱하면 (1 − r)이 지워져 1/n이 남습니다.',hint:'④ 칸의 1/n 법칙.'}],
+     {q:'정팔각형 나선은 도형 넓이의 얼마를 차지할까?',o:['1/8','S와 같은 6.83배','1/6.83'],a:0,why:'첫 조각 (1 − r)/n에 S = 1/(1 − r)을 곱하면 (1 − r)이 지워져 1/n이 남습니다.',hint:'④ 단계의 1/n 법칙.'}],
  duel:[{q:'주판봇이 진 까닭은?',o:['십이각형은 S가 작아서','계산을 틀려서','단위가 "첫 조각"인 S를 도형 넓이로 읽어서'],a:2,why:'S는 첫 조각의 몇 배인지일 뿐입니다. 도형 넓이로 바꾸면 십이각형 나선은 1/12, 삼각형은 1/3입니다.',hint:'두 차트의 축 제목.'}]
 }});
 U.start();
