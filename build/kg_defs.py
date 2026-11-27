@@ -89,11 +89,11 @@ json.dump(refs, open(os.path.join(D,"refs_0.json"),"w"), ensure_ascii=False, ind
 meta = {"title":"그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이","series":"데이터시각화 연구실","number":"1",
  "creator":[{"name":"안상선","role":"author","affiliation":"(주)M-Robo"}],
  "contributor":[{"name":"AI 보조 제작","role":"assistant"}],
- "date":"2026-11-27","version":"2.0","language":["ko"],"license":"",
+ "date":"2026-11-27","version":"2.1","language":["ko"],"license":"",
  "url":"https://adminmrobo.github.io/polygon_series_lab/",
  "about":["lab:concept/geometric-series","lab:concept/log-scale","lab:concept/unit-of-measure"],
  "basedOn":["matharium_polygon_series"],"educationalLevel":"입문","learningResourceType":"interactive explainer",
  "registry":"KG_00_registry 0.2",
- "suggestedCitation":"안상선 (2026). 그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이. 데이터시각화 연구실 1, v2.0."}
+ "suggestedCitation":"안상선 (2026). 그릴 수 있는 등비급수 — 정다각형 속 나선의 넓이. 데이터시각화 연구실 1, v2.1."}
 json.dump(meta, open(os.path.join(D,"meta_0.json"),"w"), ensure_ascii=False, indent=1)
 print(len(N),"nodes",len(E),"edges")

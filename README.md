@@ -35,8 +35,8 @@
 │  ├─ kg_defs.py              지식 그래프·참고문헌·페이지 서지 → kg_0 / refs_0 / meta_0.json
 │  └─ build.js                조립: node build/build.js
 ├─ code/check_numbers.py      수치 검산
-├─ img/og_cover.webp                     공유 미리보기 (임시: 그림판 표지)
-├─ COVER_PROMPTS_polygon_series_lab.md   표지·장면 Genspark 지시문 3장 (고해상도 16비트 픽셀아트, 아직 받지 않음)
+├─ img/                                  표지·장면 2장·공유 미리보기·썸네일 (WebP, 픽셀아트)
+├─ COVER_PROMPTS_polygon_series_lab.md   표지·장면 Genspark 지시문 3장 (고해상도 16비트 픽셀아트, 2026-11-27 받아 반영)
 ├─ IMG_spec_polygon_series_lab.md        이미지 제작 명세서
 └─ cover_manifest.json                   표지 현황판 연결
 ```

@@ -50,8 +50,8 @@
       "robot": "jupanbot-v2",
       "prompt_en": "Website illustration, wide 16:9 ... high-resolution 16-bit pixel art ... girl researcher and calm maid intern asking and answering in front of a nested heptagon terracotta spiral ... No text (전체: COVER_PROMPTS_polygon_series_lab.md 1번)",
       "source_of": null,
-      "status": "pending",
-      "received": null
+      "status": "ok",
+      "received": "2026-11-27"
     },
     {
       "id": "sc_01_aic",
@@ -71,8 +71,8 @@
       "robot": "jupanbot-v2",
       "prompt_en": "(전체: COVER_PROMPTS_polygon_series_lab.md 2번)",
       "source_of": null,
-      "status": "pending",
-      "received": null
+      "status": "ok",
+      "received": "2026-11-27"
     },
     {
       "id": "sc_01_outro",
@@ -96,8 +96,8 @@
       "robot": "jupanbot-v2",
       "prompt_en": "(전체: COVER_PROMPTS_polygon_series_lab.md 3번)",
       "source_of": null,
-      "status": "pending",
-      "received": null
+      "status": "ok",
+      "received": "2026-11-27"
     },
     {
       "id": "og_cover",
@@ -110,9 +110,23 @@
       "characters": [],
       "prompt_en": null,
       "source_of": "cover_01",
-      "status": "temporary",
+      "status": "ok",
       "received": "2026-11-27",
-      "note": "그림판 표지를 찍은 임시본. cover_01을 받으면 잘라 교체"
+      "note": "cover_01에서 1200×630으로 자름"
+    },
+    {
+      "id": "thumb_01",
+      "role": "thumb",
+      "path": "img/thumb_01.webp",
+      "size": [
+        600,
+        400
+      ],
+      "characters": [],
+      "prompt_en": null,
+      "source_of": "cover_01",
+      "status": "ok",
+      "received": "2026-11-27"
     }
   ],
   "updated": "2026-11-27"
